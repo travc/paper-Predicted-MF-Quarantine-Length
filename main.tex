@@ -3,6 +3,7 @@
 
 \documentclass[10pt,a4paper,twocolumn]{article}
 \usepackage{f1000_styles}
+\usepackage{gensymb}
 
 %% Default: numerical citations
 \usepackage[numbers]{natbib}
@@ -13,6 +14,9 @@
 %% Uncomment these lines for author-year citations instead
 % \usepackage[round]{natbib}
 % \let\cite\citep
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
 
 \begin{document}
 
@@ -160,22 +164,18 @@ The format of the main body of the article is flexible: it should be concise and
 % \row John & Doe & $7.5$ \\ 
 % \row Richard & Miles & $2$ \\ 
 \begin{tabledata}{llllrrrl}
-\header Callsign & Station Name & State & Latitude & Longitude & Elevation & Begin date \\
-\row KSFO &  SAN FRANCISCO INTERNATIONAL A &  CA &  +37.620 &  -122.365 &  2.4 & 1948-01-02 \\
-\row KFAT &  FRESNO YOSEMITE INTERNATIONAL &  CA &  +36.780 &  -119.719 &  101.5 & 1949-08-22 \\
-\row KBUR &     BURBANK-GLENDALE-PASA ARPT &  CA &  +34.201 &  -118.358 &  236.2 & 1973-01-01 \\
-\row KLAX &  LOS ANGELES INTERNATIONAL AIR &  CA &  +33.938 &  -118.389 &  29.6 & 1947-01-02 \\
-\row KRIV &         MARCH AIR RESERVE BASE &  CA &  +33.900 &  -117.250 &  468.2 & 1941-09-02 \\
-\row KSAN &  SAN DIEGO INTERNATIONAL AIRPO &  CA &  +32.734 &  -117.183 &  4.6 & 1948-01-02 \\
-\row KJAX &  JACKSONVILLE  INTERNATIONAL A &  FL &  +30.495 &  -81.694 &  7.9 & 1948-01-01 \\
-\row KIAH &  G BUSH INTERCONTINENTAL AP/HO &  TX &  +29.980 &  -95.360 &  29.0 & 1969-06-01 \\
-\row KMCO &  ORLANDO INTERNATIONAL AIRPORT &  FL &  +28.434 &  -81.325 &  27.4 & 1973-01-01 \\
-\row KTPA &    TAMPA INTERNATIONAL AIRPORT &  FL &  +27.962 &  -82.540 &  5.8 & 1948-01-02 \\
-\row KMIA &    MIAMI INTERNATIONAL AIRPORT &  FL &  +25.791 &  -80.316 &  8.8 & 1948-01-01 \\
-% \row KSNA &     J. WAYNE APT-ORANGE CO APT &  CA &  +33.680 &  -117.866 &  +0016.5 & 1972-02-23 & 2017-05-16 \\
-% \row KONT &     ONTARIO INTERNATIONAL ARPT &  CA &  +34.056 &  -117.600 &  +0289.3 & 2001-08-12 & 2017-05-18 \\
-% \row KHST &          HOMESTEAD AFB AIRPORT &  FL &  +25.483 &  -080.383 &  +0001.5 & 1994-01-05 & 2017-05-17 \\
-% \row KFUL &       FULLERTON MUNICIPAL ARPT &  CA &  +33.872 &  -117.979 &  +0029.3 & 1996-01-05 & 2017-05-18 \\
+\header Callsign & Station Name & State & Latitude & Longitude & Elevation & Start year \\
+\row KSFO &  SAN FRANCISCO INTERNATIONAL A &  CA &  +37.620 &  -122.365 &  2.4 & 1950 \\
+\row KFAT &  FRESNO YOSEMITE INTERNATIONAL &  CA &  +36.780 &  -119.719 &  101.5 & 1950 \\
+\row KBUR &     BURBANK-GLENDALE-PASA ARPT &  CA &  +34.201 &  -118.358 &  236.2 & 1973 \\
+\row KLAX &  LOS ANGELES INTERNATIONAL AIR &  CA &  +33.938 &  -118.389 &  29.6 & 1950 \\
+\row KRIV &         MARCH AIR RESERVE BASE &  CA &  +33.900 &  -117.250 &  468.2 & 1950 \\
+\row KSAN &  SAN DIEGO INTERNATIONAL AIRPO &  CA &  +32.734 &  -117.183 &  4.6 & 1950 \\
+\row KJAX &  JACKSONVILLE  INTERNATIONAL A &  FL &  +30.495 &  -81.694 &  7.9 & 1950 \\
+\row KIAH &  G BUSH INTERCONTINENTAL AP/HO &  TX &  +29.980 &  -95.360 &  29.0 & 1970 \\
+\row KMCO &  ORLANDO INTERNATIONAL AIRPORT &  FL &  +28.434 &  -81.325 &  27.4 & 1973 \\
+\row KTPA &    TAMPA INTERNATIONAL AIRPORT &  FL &  +27.962 &  -82.540 &  5.8 & 1950 \\
+\row KMIA &    MIAMI INTERNATIONAL AIRPORT &  FL &  +25.791 &  -80.316 &  8.8 & 1950 \\
 \end{tabledata}
 \end{table*}
 
@@ -185,7 +185,7 @@ Hourly air temperature data for 11 sites was downloaded from
 NOAA's Integrated Surface Database (ISD) dataset\cite{smith_integrated_2011,NOAA_ISD_portal}.
 The airport sites shown in Table \ref{tab:sites}
 were chosen for their biological relevance and 
-availability of high quality hourly data over a long timeframe.
+availability of high quality hourly data over a long time frame.
 
 Data was fetched and parsed using the "Fetching and parsing ISH.ipynb" program.
 Records for the same station callsign were merged, since identification, format, 
@@ -198,19 +198,58 @@ resampling to every hour on the hour using linear interpolation,
 and filling the large gaps using day-over-day linear interpolation
 (interpolating using values for the same hour of day from previous and following days).
 The processing programs and resulting temperature datasets are 
-provided in the Supplemental Materials with the intent that they 
-may be adapted and used by others.
+provided in the Supplemental Materials.
 
 
 \subsection*{Degree-Day Calculation}
-Degree-days were computed using 
-foo\cite{Roltsch1999}
+Degree-days were computed by the single-sine method\cite{ECY:ECY1969503514}
+using a base development temperature of 12.39\degree C (53.3\degree F) 
+and 345.56 degree-days Celsius (DDc; 622 DDf) per generation 
+following the standard required by California Department of Food and Agriculture
+regulation 3406(b)\cite{CDFA_Medfly,3-CA-ADC-3406}.
+%single-triangle\cite{10.2307/1933072}
+Since we have hourly temperature data, we also calculated degree-days by simple summation
+for comparison\cite{Roltsch1999}.
+For each date, the number of days required to pass 3 generations of degree-day 
+based life cycles was computed.
+These calculations are implemented in "Temperature functions.ipynb" in the Supplemental Materials.
 
-single-sine\cite{ECY:ECY1969503514}
+\subsection*{Agent-based Simulations: MED-FOES}
 
-single-triangle\cite{10.2307/1933072}
+MED-FOES\cite{manoukis_computer_2014,manoukis_agent-based_2014} is 
+an agent-based simulation explicitly modeling the eradication of a population of Medflies 
+under inundative sterile male releases (aka: sterile insect technique or SIT).
+A MED-FOES simulation models a single non-spatial population starting from a given age distribution 
+and number of individuals through the time the population experiences extirpation when the last 
+potentially fertile female dies or mates with a sterile male.
+The simulation is parameterized on the initial population, additional mortality induced by control efforts,
+the effectiveness of SIT, and a large number of biological parameters for which ranges are known from 
+the literature, including temperature-dependent development and mortality.
+The simulation is fed the same hourly timeseries of temperature values which was used for degree-day calculations
+and updated in hourly time steps.
 
-\subsection*{Agent-based Simulations: MedFoes}
+Due to the fact that only ranges are known for many of the parameters,
+2500 individual MED-FOES simulations were run for each given start date at each site 
+sampling different regions of parameter-space using a Latin Hypercube Sampling\cite{10.2307/1403510} procedure.
+This set of simulations is referred to as a 'run'.
+
+Varying the start date for different simulations was achieved by simply 
+starting at different points in the input temperature file; 
+for this study a run starting every 7 days over the range of dates available for each site.
+Each set of runs for a single site over a range of starting dates is referred to as a 'runset'.
+All runsets were conducted with the same input parameters aside from temperature.
+Initial population numbers were chosen as a standard outbreak based upon several real 
+outbreaks modeled previously\cite{manoukis_agent-based_2014}.
+
+MED-FOES version 0.6.2 was run under OGS/Grid Engine 2011.11 on a CentOS 6.6 HPC cluster.
+The MED-FOES code, configuration files, and helper scripts are provided in the Supplemental Materials.
+Overall, we created 11 runsets (one for each site), 
+each containing runs starting every 7 days over the input temperature data range for that site,
+where each run contained 2500 individual simulations sampling different regions of 
+biologically plausible parameter space.
+
+The MED-FOES data is summarized here by the number of days from the start date required 
+95\% of the simulations in a run to be eradicated, referred to as pe95.
 
 
 \section*{Results}
@@ -255,10 +294,10 @@ Please do not list grant funding in this section.
 {\small\bibliographystyle{unsrtnat}
 \bibliography{main}}
 
-\bigskip
-References can be listed in any standard referencing style that uses a numbering system
-(i.e. not Harvard referencing style), and should be consistent between references within
-a given article.
+% \bigskip
+% References can be listed in any standard referencing style that uses a numbering system
+% (i.e. not Harvard referencing style), and should be consistent between references within
+% a given article.
 
 % Reference management systems such as Zotero provide options for exporting bibliographies as Bib\TeX{} files. Bib\TeX{} is a bibliographic tool that is used with \LaTeX{} to help organize the user's references and create a bibliography. This template contains an example of such a file, \texttt{sample.bib}, which can be replaced with your own. Use the \verb|\cite| command  to create in-text citations, like this \cite{Smith:2012qr} and this \cite{Smith:2013jd}.
 
