@@ -151,9 +151,30 @@ The format of the main body of the article is flexible: it should be concise and
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\textwidth]{sitemap.pdf}
+\includegraphics[width=0.4\textwidth]{figs/sitemap.pdf}
 \caption{\label{fig:sitemap}Location of sites reported on.}
 \end{figure}
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\textwidth]{figs/fig_main.pdf}
+\caption{\label{fig:main_summary}Summary of normal quarantine length predictions for each site.}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.9\textwidth]{figs/fig_BMDD_variation.pdf}
+\caption{\label{fig:DD_variation_summary}Variation in quarantine length prediction 
+based on 3 generations of single-sine degree day accumulation.}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.9\textwidth]{figs/fig_pe95_variation.pdf}
+\caption{\label{fig:pe95_variation_summary}Variation in quarantine length prediction 
+based on 95\% of MED-FOES simulations showing extirpation.}
+\end{figure*}
+
 
 \begin{table*}[ht!]
 \hrule \vspace{0.1cm}
@@ -187,11 +208,11 @@ The airport sites shown in Table \ref{tab:sites}
 were chosen for their biological relevance and 
 availability of high quality hourly data over a long time frame.
 
-Data was fetched and parsed using the "Fetching and parsing ISH.ipynb" program.
+Data was fetched and parsed using the \texttt{Fetching and parsing ISH.ipynb} program.
 Records for the same station callsign were merged, since identification, format, 
 and precise location of stations has changed over the years.
 The data was then cleaned using the 
-"Cleaning temperatures.ipynb" program by 
+\texttt{Cleaning temperatures.ipynb} program by 
 removing outliers, 
 identifying large gaps ($gt$ 3 hours), 
 resampling to every hour on the hour using linear interpolation,
@@ -212,7 +233,7 @@ Since we have hourly temperature data, we also calculated degree-days by simple 
 for comparison\cite{Roltsch1999}.
 For each date, the number of days required to pass 3 generations of degree-day 
 based life cycles was computed.
-These calculations are implemented in "Temperature functions.ipynb" in the Supplemental Materials.
+These calculations are implemented in \texttt{Temperature functions.ipynb} in the Supplemental Materials.
 
 \subsection*{Agent-based Simulations: MED-FOES}
 
@@ -231,12 +252,12 @@ and updated in hourly time steps.
 Due to the fact that only ranges are known for many of the parameters,
 2500 individual MED-FOES simulations were run for each given start date at each site 
 sampling different regions of parameter-space using a Latin Hypercube Sampling\cite{10.2307/1403510} procedure.
-This set of simulations is referred to as a 'run'.
+This set of simulations is referred to as a `run'.
 
 Varying the start date for different simulations was achieved by simply 
 starting at different points in the input temperature file; 
 for this study a run starting every 7 days over the range of dates available for each site.
-Each set of runs for a single site over a range of starting dates is referred to as a 'runset'.
+Each set of runs for a single site over a range of starting dates is referred to as a `runset'.
 All runsets were conducted with the same input parameters aside from temperature.
 Initial population numbers were chosen as a standard outbreak based upon several real 
 outbreaks modeled previously\cite{manoukis_agent-based_2014}.
@@ -250,6 +271,31 @@ biologically plausible parameter space.
 
 The MED-FOES data is summarized here by the number of days from the start date required 
 95\% of the simulations in a run to be eradicated, referred to as pe95.
+
+\subsection*{Statistical analysis}
+
+The main results reported here are `normals' in a modified meteorological sense of term.
+For a variable of interest (eg. temperature), 
+all values for the same calendar day irrespective of year (eg. 20-July) are
+aggregated and summary statistics such as mean, minimum, maximum, and standard deviation 
+are computed for each calendar day.
+Figure \ref{fig:main_summary} shows the minimum and maximum of the normals for temperatures
+along with the mean of the normal quarantine length predictions based on 3 generation degree day accumulation 
+and MED-FOES 95\% extirpation.
+Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} show the 
+standard deviations ($\sigma$) of the normals for the degree day and MED-FOES based quarantine length 
+predictions.
+\texttt{Temperature functions.ipynb} contains the code used to perform normal calculations, 
+and the code generating these figures is \texttt{Summary Figures.ipynb}.
+
+The results reported here are the normals of predicted quarantine durations computed using the actual 
+temperature time series,
+not the predicted quarantine durations computed from a normal of the temperature time series.
+While the latter is fairly common practice, it is not mathematically proper 
+since, as with means, the normal of a function of $X$ is not generally equal to the function applied to the normal of $X$.
+Additionally, by computing the normals of the predicted quarantine durations, 
+we can investigate properties of the distribution of values as shown in 
+figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} and the ``supernorm" supplemental figures.
 
 
 \section*{Results}
