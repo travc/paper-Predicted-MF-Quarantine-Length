@@ -82,12 +82,7 @@ is important.
 \end{enumerate}
 
 
-\section*{Introduction}
-
-The format of the main body of the article is flexible: it should be concise and in the format most appropriate to displaying the content of the article.
-
 % Some examples of commonly used \LaTeX{}  commands and features are listed below, to help you get started.
-
 
 % \subsection*{Sections}
 
@@ -123,8 +118,6 @@ The format of the main body of the article is flexible: it should be concise and
 % \caption{\label{fig:your-figure}Your figure legend goes here; it should be succinct, while still explaining all symbols and abbreviations. }
 % \end{figure}
 
-
-
 % \subsection*{Mathematics}
 
 % \LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
@@ -145,6 +138,29 @@ The format of the main body of the article is flexible: it should be concise and
 % \item Like this,
 % \item and like this.
 % \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Introduction}
+
+Medfly (\textit{Ceratitis capitata}) bad... covfefe...
+
+Predicting the likely duration of required quarantines would help with
+management decision making and planning,
+including potential cost savings by having sufficient but not excessive
+resources available.
+
+We analysed the predicted quarantine length (PQL for short) 
+for 11 sites in the continental United States
+based on both the standard thermal accumulation degree day method\cite{ECY:ECY1969503514} 
+as well as the MED-FOES\cite{manoukis_computer_2014} agent based simulation of 
+population of medfiles under sterile insect technique (SIT)\cite{??} eradication.
+
+Seasonal variations dominate the variation in quarantine length predictions, 
+so we aggregated the PQL values for each day of the year (Jan.\ 1, Jan.\ 2, ect.) 
+across a large number of years (65 for most of locations) to produce normals.
+
+
 
 \section*{Methods}
 % Methods should include a brief discussion of allowances made (if any) for controlling bias or unwanted sources of variability, and the limitations of the datasets.
@@ -180,10 +196,6 @@ based on 95\% of MED-FOES simulations showing extirpation.}
 \hrule \vspace{0.1cm}
 \caption{\label{tab:sites}Sites.}
 \centering
-% \begin{tabledata}{llr} 
-% \header First name & Last Name & Grade \\ 
-% \row John & Doe & $7.5$ \\ 
-% \row Richard & Miles & $2$ \\ 
 \begin{tabledata}{llllrrrl}
 \header Callsign & Station Name & State & Latitude & Longitude & Elevation & Start year \\
 \row KSFO &  SAN FRANCISCO INTERNATIONAL A &  CA &  +37.620 &  -122.365 &  2.4 & 1950 \\
@@ -208,13 +220,20 @@ The airport sites shown in Table \ref{tab:sites}
 were chosen for their biological relevance and 
 availability of high quality hourly data over a long time frame.
 
+Sites are referred to here by the last three letters of the callsign shown in Table \ref{tab:sites}.
+For 8 sites (SFO, FAT, LAX, RIV, SAN, JAx, TPA, and MIA), temperature data starting on 1950-01-01 was used.
+The 3 other sites contained large ($>$ 14 days) gaps or other problems in the early years of their data,
+so data starting on 1970-01-01 for IAH and 1973-01-01 for BUR and MCO was used.
+For all sites, temperature data from the start date through 2017-05-15 was used
+for quarantine length predictions for dates ranging from the start date for the site up to 2016-01-01.
+
 Data was fetched and parsed using the \texttt{Fetching and parsing ISH.ipynb} program.
 Records for the same station callsign were merged, since identification, format, 
 and precise location of stations has changed over the years.
 The data was then cleaned using the 
 \texttt{Cleaning temperatures.ipynb} program by 
 removing outliers, 
-identifying large gaps ($gt$ 3 hours), 
+identifying large gaps ($>$ 3 hours), 
 resampling to every hour on the hour using linear interpolation,
 and filling the large gaps using day-over-day linear interpolation
 (interpolating using values for the same hour of day from previous and following days).
@@ -234,6 +253,7 @@ for comparison\cite{Roltsch1999}.
 For each date, the number of days required to pass 3 generations of degree-day 
 based life cycles was computed.
 These calculations are implemented in \texttt{Temperature functions.ipynb} in the Supplemental Materials.
+
 
 \subsection*{Agent-based Simulations: MED-FOES}
 
@@ -274,23 +294,23 @@ The MED-FOES data is summarized here by the number of days from the start date r
 
 \subsection*{Statistical analysis}
 
-The main results reported here are `normals' in a modified meteorological sense of term.
-For a variable of interest (eg. temperature), 
+The main results reported here are `normals' in a meteorological sense of term,
+but without the typical running mean smoothing which would complicate
+interpretation of the results.
+For a variable of interest (eg. temperature or PQL), 
 all values for the same calendar day irrespective of year (eg. 20-July) are
 aggregated and summary statistics such as mean, minimum, maximum, and standard deviation 
-are computed for each calendar day.
+are computed for each aggregation.
 Figure \ref{fig:main_summary} shows the minimum and maximum of the normals for temperatures
-along with the mean of the normal quarantine length predictions based on 3 generation degree day accumulation 
+along with the mean of the normal PQL based on 3 generation degree day accumulation 
 and MED-FOES 95\% extirpation.
 Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} show the 
-standard deviations ($\sigma$) of the normals for the degree day and MED-FOES based quarantine length 
-predictions.
+standard deviations ($\sigma$) of the normals for the degree day and MED-FOES based PQL.
 \texttt{Temperature functions.ipynb} contains the code used to perform normal calculations, 
 and the code generating these figures is \texttt{Summary Figures.ipynb}.
 
-The results reported here are the normals of predicted quarantine durations computed using the actual 
-temperature time series,
-not the predicted quarantine durations computed from a normal of the temperature time series.
+The results reported here are the normals of PQL computed using the full temperature time series
+as opposed to computing PQL from the normal of the temperature timeseries.
 While the latter is fairly common practice, it is not mathematically proper 
 since, as with means, the normal of a function of $X$ is not generally equal to the function applied to the normal of $X$.
 Additionally, by computing the normals of the predicted quarantine durations, 
