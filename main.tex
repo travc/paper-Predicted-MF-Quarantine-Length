@@ -319,7 +319,58 @@ figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} and 
 
 
 \section*{Results}
-This section is not essential for Web Tool papers.
+
+There is significant variation in PQL across both time and location.
+The temporal variation in PQL is dominated by a yearly cycle
+which is characterized well by the normal values shown in figure \ref{fig:main_summary}.
+Table \ref{tab:variance_captured_by_normal} shows the percentage of variance in 
+quarantine length predictions which is captured by the normal yearly cycle for each site.
+At all but one site, greater than 75\% of the variance in both degree day and MED-FOES based PQL
+is accounted for by the normal, and the majority exceed 90\%.
+SFO is an exception to the overall rule, with the normal accounting for only 9.1\% of the variation in 
+degree day based PQL and 28.0\% or the MED-FOES based PQL.
+This is more clearly shown in the respective `supernorm' supplemental figures S?? and S??.
+
+\begin{table}[ht]
+\hrule \vspace{0.1cm}
+\caption{\label{tab:variance_captured_by_normal}
+Percentage of PQL variance captured by normal.  
+DD PQL is the 3 generation single sine degree day based prediction, 
+and pe95 is the MED-FOES agent-based simulation predictions.}
+\centering
+\begin{tabledata}{lrr}
+\header Site & DD PQL & pe95 \\
+\row SFO &   9.12\% & 28.01\% \\
+\row FAT &  93.93\% & 75.68\% \\
+\row BUR &  90.71\% & 90.88\% \\
+\row LAX &  80.17\% & 83.07\% \\
+\row RIV &  92.23\% & 81.89\% \\
+\row SAN &  80.99\% & 80.91\% \\
+\row JAX &  96.45\% & 94.78\% \\
+\row IAH &  95.10\% & 91.80\% \\
+\row MCO &  94.62\% & 95.77\% \\
+\row TPA &  91.91\% & 94.40\% \\
+\row MIA &  88.42\% & 92.00\% \\
+\end{tabledata}
+\end{table}
+
+The seasonal variation, evidenced by the general shape of the curves shown in figure \ref{fig:main_summary}, 
+is doubtless familiar to anyone engaged in medfly pest management.
+Outbreaks starting in the late summer, autumn, or early winter will extend through relatively cold periods
+where thermal dependent development will be slow and therefore extend the duration of quarantine required
+for 3 generations of degree days to accumulate (referred to as DD PQL hereafter).
+Similarly, outbreaks starting in the spring or early summer are often lead to short quarantines due
+to the relatively high temperatures.
+
+This familiar pattern is also predicted by the MED-FOES ABS despite it being quite different in nature
+from simple degree day accumulation.
+However, the MED-FOES predictions (pe95) are show a smaller seasonal swing.
+pe95 generally predicts longer quarantines than DD PQL for spring and early summer outbreaks,
+and shorter quarantines than DD PQL for late summer through early winter.
+
+
+
+
 
 \section*{Discussion}
 The discussion should include the implications of the article results in view of prior work in this field.
