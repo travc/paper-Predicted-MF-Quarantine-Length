@@ -289,7 +289,7 @@ each containing runs starting every 7 days over the input temperature data range
 where each run contained 2500 individual simulations sampling different regions of 
 biologically plausible parameter space.
 
-The MED-FOES data is summarized here by the number of days from the start date required 
+The MED-FOES data is summarized here by the number of days from the start date required for
 95\% of the simulations in a run to be eradicated, referred to as pe95.
 
 \subsection*{Statistical analysis}
@@ -324,21 +324,22 @@ There is significant variation in PQL across both time and location.
 The temporal variation in PQL is dominated by a yearly cycle
 which is characterized well by the normal values shown in figure \ref{fig:main_summary}.
 Table \ref{tab:variance_captured_by_normal} shows the percentage of variance in 
-quarantine length predictions which is captured by the normal yearly cycle for each site.
+quarantine length predictions which is captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
 At all but one site, greater than 75\% of the variance in both degree day and MED-FOES based PQL
-is accounted for by the normal, and the majority exceed 90\%.
-SFO is an exception to the overall rule, with the normal accounting for only 9.1\% of the variation in 
+is accounted for by the mean normal, and the majority exceed 90\%.
+SFO is an exception to the overall rule, with the mean normal accounting for only 9.1\% of the variation in 
 degree day based PQL and 28.0\% or the MED-FOES based PQL.
 This is more clearly shown in the respective `supernorm' supplemental figures S?? and S??.
 
 \begin{table}[ht]
 \hrule \vspace{0.1cm}
 \caption{\label{tab:variance_captured_by_normal}
-Percentage of PQL variance captured by normal.  
+Percentage of PQL variance captured by the mean of the normal.  
 DD PQL is the 3 generation single sine degree day based prediction, 
 and pe95 is the MED-FOES agent-based simulation predictions.}
 \centering
 \begin{tabledata}{lrr}
+\header & \multicolumn{2}{c}{$R^2$} \\
 \header Site & DD PQL & pe95 \\
 \row SFO &   9.12\% & 28.01\% \\
 \row FAT &  93.93\% & 75.68\% \\
@@ -359,14 +360,50 @@ is doubtless familiar to anyone engaged in medfly pest management.
 Outbreaks starting in the late summer, autumn, or early winter will extend through relatively cold periods
 where thermal dependent development will be slow and therefore extend the duration of quarantine required
 for 3 generations of degree days to accumulate (referred to as DD PQL hereafter).
-Similarly, outbreaks starting in the spring or early summer are often lead to short quarantines due
+Similarly, outbreaks starting in the spring or early summer often lead to short quarantines due
 to the relatively high temperatures.
 
 This familiar pattern is also predicted by the MED-FOES ABS despite it being quite different in nature
 from simple degree day accumulation.
-However, the MED-FOES predictions (pe95) are show a smaller seasonal swing.
-pe95 generally predicts longer quarantines than DD PQL for spring and early summer outbreaks,
-and shorter quarantines than DD PQL for late summer through early winter.
+However, the MED-FOES predictions (pe95) show a smaller seasonal swing.
+pe95 generally predicts as smaller overall range of PQL,
+with longer quarantines than DD PQL for spring and early summer outbreaks,
+and shorter quarantines for late summer through early winter.
+
+A particular feature of interest, shown most dramatically at FAT in figure \ref{fig:main_summary},
+is that MED-FOES PQL often flattens out or even dips for quarantines starting in the late 
+autumn or early winter.  This is due to relatively rare and brief cold-snaps,
+normally lasting only a few hours, which increase mortality.
+Since DD PQL does not account for mortality, it misses the effect of cold-snaps entirely.
+This cold-snap effect is most clearly seen at more northern and 
+more inland sites where cold-snaps are more likely: 
+particularly FAT and RIV, but also BUR, LAX, JAX, and IAH.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.9\textwidth]{figs/fig_latitude_trend_withSFO.pdf}
+\caption{\label{fig:latitude_trend} Predicted quarantine length dependence on latitude.
+For each site, the mean, median, and inter-quartile range are shown (similar to a boxplot).
+An ordinary least-squares linear fit to the median values is shown by the green lines.
+The left pane is for single sine degree day predictions,
+and MED-FOES based predictions (pe95) in the right pane.
+}
+\end{figure*}
+
+Spatial variation generally follows latitude.
+Sites are ordered by latitude in the figures and tables.
+Once again, SFO, the highest latitude site, is an outlier where the models appear to break down.
+All other sites follow a general trend where higher latitudes have larger seasonal 
+swings in both DD and MED-FOES PQL seen in figure \ref{fig:main_summary}.
+
+Figure \ref{fig:latitude_trend} shows the relationship between PQL and latitude.
+An ordinary least squares fit to the median PQL at each site shows a significant slope for
+both DD ($F{=}14.08$, $p{=}0.005$) and MED-FOES ($F{=}10.55$, $p{=}0.010$), but
+the DD based predictions are more sensitive to latitude than MED-FOES
+(coefficients of 17.39 and 4.78 respectively).
+Additionally, the predictions for SFO, and to a lesser extent FAT, where the DD model for medfly appears to
+break down are much better behaved under MED-FOES.
+
 
 
 
