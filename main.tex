@@ -143,20 +143,93 @@ is important.
 
 \section*{Introduction}
 
-Medfly (\textit{Ceratitis capitata}) bad... covfefe...
+Invasions by insects, pathogens and pests increasingly appear to be a 
+defining challenge of the $21^{st}$ century, facilitated by global connectivity, climatic shifts, and
+other factors \cite{simberloff_impacts_2013} (find paper on number of invasive species). Invasions by insects that do not become established are by their nature less
+likely to be detected than those that are ``successful''
+from the point of view of the insect. However, when the invading species
+is of  environmental, human health or economic concern there is a greater
+chance that cases of invasion followed by extirpation would be detected and
+studied \citep{liebhold_population_2008}. Eradication of such insects
+can be desirable and feasible \citep{Myers2000Eradication} depending on several
+factors. One factor might be that the new environment is only marginally or 
+seasonally suitable to the
+invading insect, facilitating its eradication. Another is that the high cost of
+allowing establishment leads
+to extensive efforts for eradication. The invasion of
+\emph{Anopheles gambiae} into Northeastern Brazil in the 1930's \citep{Soper1943Anopheles}
+is one example of an invasive insect that was successfully eradicated 
+primarily due to the second of these
+reasons \citep{Causey1943Ecology,Killeen2002Eradication}.
 
+In the case of \emph{An. gambiae} there have been no reports of
+re invasion, but there are examples of insects that
+recurrently invade areas outside their native range and are recurrently
+extirpated within relatively few 
+genrations. The Gypsy moth \emph{Lymantria dispar} in Canada
+\citep{Gray2010Hitchhikers} is one such species, and arguably, the screwworm \emph{Cochlyomyia hominivorax}
+around the area at the current northernmost edge of its range in Panama, and more recently in Florida,
+\citep{Robinson2009Enabling} is another. (add citation on Florida)
+
+One of the most important instances of repeated invasion and extirpation by an economically 
+important pest is that of the \textit{Ceratitis capitata} (``Mediterranean fruit fly'', or `` Medfly'') 
+in California.  
+Though the establishment of these pests is disputed, a pattern of invasion, detection, and response, followed by no further detections for a long period, has been established over the last four decades. 
+Some have argued that Medfly in California is an example of a ``metainvasion'', consisting of 
+multiple sequential or
+overlapping introductions \citep{Davies1999Bioinvasions}. Still other researchers have maintained 
+that Medfly is repeatedly eradicated
+from the state \citep{Haymer1997Genetic} or for different situations
+in different regions of the state
+\citep{Bonizzoni2001Microsatellite,Gasperi2002Genetic}. Medfly is occasionally found in 
+other parts of the mainland US such as Florida (cite), and in other countries or areas that are considered 
+free of the pest such as New Zealand (CHECK), and (some free areas here).
+
+The response plan to Medfly in California, and the other ``free'' regions mentioned above, is extensive and 
+ costly, including a quarantine \cite{Gilbert}. A practical and important problem 
+is how long to maintain the countermeasures and quarantine following a last detection. 
 Predicting the likely duration of required quarantines would help with
 management decision making and planning,
 including potential cost savings by having sufficient but not excessive
+<<<<<<< HEAD
 resources available.
 
 We analysed the predicted quarantine length (PQL for short) 
 for 11 sites
 in the continental United States
 (figure \ref{fig:sitemap} and table \ref{tab:sites})
+=======
+resources available. Currently most programs determine quarantine lengths by calculating the amount of
+time required for a given number of generations to elapse under a thermal unit accumulation (``Degree day'')
+physiological development model (CITE). Recently another approach to determining effective quarantine 
+durations was introduced via Agent-Based Simulations \cite{Manoukis2014}. 
+
+Agent-Based
+Simulations (ABS) or models (also called ``Individual-Based'' or
+	``Multi-Agent''), which can be minimally defined as those where
+individuals are described as unique and autonomous, and where they usually
+interact with each other and their environment on a local level
+\cite{Railsback2011Agent}. Such simulations describe a system of
+interest ``from the bottom up'': by implementing its constituent particles and
+then observing the system behaviors and dynamics that result from those
+particles interacting autonomously with their environment and often each other
+\cite{Bonabeau2002Agent}. These models can include arbitrary amounts of complexity, limited
+only by computational capacity, and are free of limitations imposed by mathematical 
+tractability \cite{Huston1988New}.
+
+While the freedom to include any degree of complexity
+in an ABS comes at a cost
+\citep{Deangelis1994Individual,Grimm1999Ten,Hales2003Model}, the pragmatic and
+paradigmatic benefits of the Agent-Based mindset can be significant for diverse
+areas of biology \citep{Macal2010Tutorial,Railsback2011Agent}, including biological
+invasions. The benefits of the Agent-Based mindset have infrequently been 
+applied to
+questions of insect invasions \citep{vinatier2011factors} (but see \citet{crespo2011modeling}
+for an example). Here, we analysed the predicted quarantine length (PQL for short) 
+for 11 sites in the continental United States
+>>>>>>> 7e771b8871ecede7be6fd0ff0a0665a5acfcaf86
 based on both the standard thermal accumulation degree day method\cite{ECY:ECY1969503514} 
-as well as the MED-FOES\cite{manoukis_computer_2014} agent based simulation of 
-population of medfiles under sterile insect technique (SIT)\cite{??} eradication.
+as well as the MED-FOES\cite{manoukis_computer_2014} ABS  under sterile insect technique (SIT)\cite{??} eradication.
 
 Seasonal variations dominate the variation in quarantine length predictions, 
 so we aggregated the PQL values for each day of the year (Jan.\ 1, Jan.\ 2, ect.) 
