@@ -151,7 +151,9 @@ including potential cost savings by having sufficient but not excessive
 resources available.
 
 We analysed the predicted quarantine length (PQL for short) 
-for 11 sites in the continental United States
+for 11 sites
+in the continental United States
+(figure \ref{fig:sitemap} and table \ref{tab:sites})
 based on both the standard thermal accumulation degree day method\cite{ECY:ECY1969503514} 
 as well as the MED-FOES\cite{manoukis_computer_2014} agent based simulation of 
 population of medfiles under sterile insect technique (SIT)\cite{??} eradication.
@@ -161,40 +163,15 @@ so we aggregated the PQL values for each day of the year (Jan.\ 1, Jan.\ 2, ect.
 across a large number of years (65 for most of locations) to produce normals.
 
 
-
-\section*{Methods}
-% Methods should include a brief discussion of allowances made (if any) for controlling bias or unwanted sources of variability, and the limitations of the datasets.
-
-\begin{figure}
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=0.4\textwidth]{figs/sitemap.pdf}
 \caption{\label{fig:sitemap}Location of sites reported on.}
 \end{figure}
 
-\begin{figure*}
-\centering
-\includegraphics[width=1\textwidth]{figs/fig_main.pdf}
-\caption{\label{fig:main_summary}Summary of normal quarantine length predictions for each site.}
-\end{figure*}
-
-\begin{figure*}
-\centering
-\includegraphics[width=0.9\textwidth]{figs/fig_BMDD_variation.pdf}
-\caption{\label{fig:DD_variation_summary}Variation in quarantine length prediction 
-based on 3 generations of single-sine degree day accumulation.}
-\end{figure*}
-
-\begin{figure*}
-\centering
-\includegraphics[width=0.9\textwidth]{figs/fig_pe95_variation.pdf}
-\caption{\label{fig:pe95_variation_summary}Variation in quarantine length prediction 
-based on 95\% of MED-FOES simulations showing extirpation.}
-\end{figure*}
-
-
 \begin{table*}[ht!]
 \hrule \vspace{0.1cm}
-\caption{\label{tab:sites}Sites.}
+\caption{\label{tab:sites}Weather station (NOAA ISD) sites used.}
 \centering
 \begin{tabledata}{llllrrrl}
 \header Callsign & Station Name & State & Latitude & Longitude & Elevation & Start year \\
@@ -213,14 +190,27 @@ based on 95\% of MED-FOES simulations showing extirpation.}
 \end{table*}
 
 
+
+\section*{Methods}
+% Methods should include a brief discussion of allowances made (if any) for controlling bias or unwanted sources of variability, and the limitations of the datasets.
+
+
+\begin{figure*}[ht!] % could add 'p' placement to allow it to be on its own page
+\centering
+\includegraphics[width=1\textwidth]{figs/fig_main.pdf}
+\caption{\label{fig:main_summary}Summary of normal quarantine length predictions for each site.}
+\end{figure*}
+
+
+
 \subsection*{Sites and Temperature Data}
 Hourly air temperature data for 11 sites was downloaded from 
 NOAA's Integrated Surface Database (ISD) dataset\cite{smith_integrated_2011,NOAA_ISD_portal}.
-The airport sites shown in Table \ref{tab:sites}
+The airport sites shown in figure \ref{fig:sitemap} 
 were chosen for their biological relevance and 
 availability of high quality hourly data over a long time frame.
 
-Sites are referred to here by the last three letters of the callsign shown in Table \ref{tab:sites}.
+Sites are referred to here by the last three letters of the callsign shown in table \ref{tab:sites}.
 For 8 sites (SFO, FAT, LAX, RIV, SAN, JAx, TPA, and MIA), temperature data starting on 1950-01-01 was used.
 The 3 other sites contained large ($>$ 14 days) gaps or other problems in the early years of their data,
 so data starting on 1970-01-01 for IAH and 1973-01-01 for BUR and MCO was used.
@@ -320,18 +310,7 @@ figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} and 
 
 \section*{Results}
 
-There is significant variation in PQL across both time and location.
-The temporal variation in PQL is dominated by a yearly cycle
-which is characterized well by the normal values shown in figure \ref{fig:main_summary}.
-Table \ref{tab:variance_captured_by_normal} shows the percentage of variance in 
-quarantine length predictions which is captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
-At all but one site, greater than 75\% of the variance in both degree day and MED-FOES based PQL
-is accounted for by the mean normal, and the majority exceed 90\%.
-SFO is an exception to the overall rule, with the mean normal accounting for only 9.1\% of the variation in 
-degree day based PQL and 28.0\% or the MED-FOES based PQL.
-This is more clearly shown in the respective `supernorm' supplemental figures S?? and S??.
-
-\begin{table}[ht]
+\begin{table}[htb!]
 \hrule \vspace{0.1cm}
 \caption{\label{tab:variance_captured_by_normal}
 Percentage of PQL variance captured by the mean of the normal.  
@@ -354,6 +333,19 @@ and pe95 is the MED-FOES agent-based simulation predictions.}
 \row MIA &  88.42\% & 92.00\% \\
 \end{tabledata}
 \end{table}
+
+There is significant variation in PQL across both time and location.
+The temporal variation in PQL is dominated by a yearly cycle
+which is characterized well by the normal values shown in figure \ref{fig:main_summary}.
+Table \ref{tab:variance_captured_by_normal} shows the percentage of variance in 
+quarantine length predictions which is captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
+At all but one site, greater than 75\% of the variance in both degree day and MED-FOES based PQL
+is accounted for by the mean normal, and the majority exceed 90\%.
+SFO is an exception to the overall rule, with the mean normal accounting for only 9.1\% of the variation in 
+degree day based PQL and 28.0\% of the MED-FOES based PQL.
+This is also shown in the respective `supernorm' supplemental figures S?? and S??.
+
+\subsection*{Seasonal dependence}
 
 The seasonal variation, evidenced by the general shape of the curves shown in figure \ref{fig:main_summary}, 
 is doubtless familiar to anyone engaged in medfly pest management.
@@ -379,7 +371,9 @@ This cold-snap effect is most clearly seen at more northern and
 more inland sites where cold-snaps are more likely: 
 particularly FAT and RIV, but also BUR, LAX, JAX, and IAH.
 
-\begin{figure*}
+\subsection*{Geographic dependence}
+
+\begin{figure*}[ht!]
 \centering
 \includegraphics[width=0.9\textwidth]{figs/fig_latitude_trend_withSFO.pdf}
 \caption{\label{fig:latitude_trend} Predicted quarantine length dependence on latitude.
@@ -390,11 +384,10 @@ and MED-FOES based predictions (pe95) in the right pane.
 }
 \end{figure*}
 
-Spatial variation generally follows latitude.
+PQL generally shows a positive correlation with latitude\cite{??}.
 Sites are ordered by latitude in the figures and tables.
-Once again, SFO, the highest latitude site, is an outlier where the models appear to break down.
-All other sites follow a general trend where higher latitudes have larger seasonal 
-swings in both DD and MED-FOES PQL seen in figure \ref{fig:main_summary}.
+As seen in figure \ref{fig:main_summary}, higher latitude sites tend to have longer PQL 
+as well as larger seasonal swings for both DD and MED-FOES based predictions.
 
 Figure \ref{fig:latitude_trend} shows the relationship between PQL and latitude.
 An ordinary least squares fit to the median PQL at each site shows a significant slope for
@@ -404,7 +397,40 @@ the DD based predictions are more sensitive to latitude than MED-FOES
 Additionally, the predictions for SFO, and to a lesser extent FAT, where the DD model for medfly appears to
 break down are much better behaved under MED-FOES.
 
+\subsection*{Variance and uncertainty}
 
+\begin{figure*}[ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{figs/fig_BMDD_variation.pdf}
+\caption{\label{fig:DD_variation_summary}Variation in quarantine length prediction 
+based on 3 generations of single-sine degree day accumulation.}
+\end{figure*}
+
+\begin{figure*}[ht!]
+\centering
+\includegraphics[width=0.9\textwidth]{figs/fig_pe95_variation.pdf}
+\caption{\label{fig:pe95_variation_summary}Variation in quarantine length prediction 
+based on 95\% of MED-FOES simulations showing extirpation.}
+\end{figure*}
+
+
+Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary}
+report the standard deviation ($\sigma$) of the normal for DD PQL and MED-FOES PQL respectively.
+These indicate the year to year variability of the PQL for outbreaks starting at a
+given time of the year and can be used to indicate the uncertainty of quarantine length predictions 
+relative to the actual quarantine length which will be required.
+Similar information is represented by the inter-quartile ranges shown in figure \ref{fig:latitude_trend} and 
+the `supernorm' supplemental figures.
+
+With the exception of SFO, the mean normal is a good predictor of DD PQL with the  ....
+
+%The outlier nature of SFO with respect to DD PQL is obvious in figure \ref{fig:DD_variation_summary};
+%While the $\sigma$ for other sites is below 20 days for the majority of outbreak start dates
+%and rise above only for outbreaks starting in the late summer or autumn, 
+%SFO's DD PQL $\sigma$ is around 100 days for winter outbreaks 
+%and decreases down to about 40 days for late summer outbreaks.
+%This is due to the colder temperatures leading to extremely long degree day based quarantine predictions
+%frequently extending across two winter seasons.
 
 
 
