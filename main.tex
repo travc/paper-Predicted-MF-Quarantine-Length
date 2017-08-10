@@ -15,6 +15,7 @@
 % \usepackage[round]{natbib}
 % \let\cite\citep
 
+\usepackage{nicefrac}
 \usepackage{url}
 \def\UrlBreaks{\do\/\do-}
 
@@ -150,26 +151,26 @@ likely to be detected than those that are ``successful''
 from the point of view of the insect. However, when the invading species
 is of  environmental, human health or economic concern there is a greater
 chance that cases of invasion followed by extirpation would be detected and
-studied \citep{liebhold_population_2008}. Eradication of such insects
-can be desirable and feasible \citep{Myers2000Eradication} depending on several
+studied \cite{liebhold_population_2008}. Eradication of such insects
+can be desirable and feasible \cite{Myers2000Eradication} depending on several
 factors. One factor might be that the new environment is only marginally or 
 seasonally suitable to the
 invading insect, facilitating its eradication. Another is that the high cost of
 allowing establishment leads
 to extensive efforts for eradication. The invasion of
-\emph{Anopheles gambiae} into Northeastern Brazil in the 1930's \citep{Soper1943Anopheles}
+\emph{Anopheles gambiae} into Northeastern Brazil in the 1930's \cite{Soper1943Anopheles}
 is one example of an invasive insect that was successfully eradicated 
 primarily due to the second of these
-reasons \citep{Causey1943Ecology,Killeen2002Eradication}.
+reasons \cite{Causey1943Ecology,Killeen2002Eradication}.
 
 In the case of \emph{An. gambiae} there have been no reports of
 re invasion, but there are examples of insects that
 recurrently invade areas outside their native range and are recurrently
 extirpated within relatively few 
 genrations. The Gypsy moth \emph{Lymantria dispar} in Canada
-\citep{Gray2010Hitchhikers} is one such species, and arguably, the screwworm \emph{Cochlyomyia hominivorax}
+\cite{Gray2010Hitchhikers} is one such species, and arguably, the screwworm \emph{Cochlyomyia hominivorax}
 around the area at the current northernmost edge of its range in Panama, and more recently in Florida,
-\citep{Robinson2009Enabling} is another. (add citation on Florida)
+\cite{Robinson2009Enabling} is another. (add citation on Florida)
 
 One of the most important instances of repeated invasion and extirpation by an economically 
 important pest is that of the \textit{Ceratitis capitata} (``Mediterranean fruit fly'', or `` Medfly'') 
@@ -177,11 +178,11 @@ in California.
 Though the establishment of these pests is disputed, a pattern of invasion, detection, and response, followed by no further detections for a long period, has been established over the last four decades. 
 Some have argued that Medfly in California is an example of a ``metainvasion'', consisting of 
 multiple sequential or
-overlapping introductions \citep{Davies1999Bioinvasions}. Still other researchers have maintained 
+overlapping introductions \cite{Davies1999Bioinvasions}. Still other researchers have maintained 
 that Medfly is repeatedly eradicated
-from the state \citep{Haymer1997Genetic} or for different situations
+from the state \cite{Haymer1997Genetic} or for different situations
 in different regions of the state
-\citep{Bonizzoni2001Microsatellite,Gasperi2002Genetic}. Medfly is occasionally found in 
+\cite{Bonizzoni2001Microsatellite,Gasperi2002Genetic}. Medfly is occasionally found in 
 other parts of the mainland US such as Florida (cite), and in other countries or areas that are considered 
 free of the pest such as New Zealand (CHECK), and (some free areas here).
 
@@ -191,14 +192,6 @@ is how long to maintain the countermeasures and quarantine following a last dete
 Predicting the likely duration of required quarantines would help with
 management decision making and planning,
 including potential cost savings by having sufficient but not excessive
-<<<<<<< HEAD
-resources available.
-
-We analysed the predicted quarantine length (PQL for short) 
-for 11 sites
-in the continental United States
-(figure \ref{fig:sitemap} and table \ref{tab:sites})
-=======
 resources available. Currently most programs determine quarantine lengths by calculating the amount of
 time required for a given number of generations to elapse under a thermal unit accumulation (``Degree day'')
 physiological development model (CITE). Recently another approach to determining effective quarantine 
@@ -219,22 +212,22 @@ tractability \cite{Huston1988New}.
 
 While the freedom to include any degree of complexity
 in an ABS comes at a cost
-\citep{Deangelis1994Individual,Grimm1999Ten,Hales2003Model}, the pragmatic and
+\cite{Deangelis1994Individual,Grimm1999Ten,Hales2003Model}, the pragmatic and
 paradigmatic benefits of the Agent-Based mindset can be significant for diverse
-areas of biology \citep{Macal2010Tutorial,Railsback2011Agent}, including biological
+areas of biology \cite{Macal2010Tutorial,Railsback2011Agent}, including biological
 invasions. The benefits of the Agent-Based mindset have infrequently been 
 applied to
-questions of insect invasions \citep{vinatier2011factors} (but see \citet{crespo2011modeling}
-for an example). Here, we analysed the predicted quarantine length (PQL for short) 
+questions of insect invasions \cite{vinatier2011factors} (but see \cite{crespo2011modeling}
+for an example).
+Here, we analysed the predicted quarantine length (PQL for short) 
 for 11 sites in the continental United States
->>>>>>> 7e771b8871ecede7be6fd0ff0a0665a5acfcaf86
+(figure \ref{fig:sitemap} and table \ref{tab:sites})
 based on both the standard thermal accumulation degree day method\cite{ECY:ECY1969503514} 
 as well as the MED-FOES\cite{manoukis_computer_2014} ABS  under sterile insect technique (SIT)\cite{??} eradication.
 
 Seasonal variations dominate the variation in quarantine length predictions, 
 so we aggregated the PQL values for each day of the year (Jan.\ 1, Jan.\ 2, ect.) 
 across a large number of years (65 for most of locations) to produce normals.
-
 
 \begin{figure}[ht!]
 \centering
@@ -271,7 +264,8 @@ across a large number of years (65 for most of locations) to produce normals.
 \begin{figure*}[ht!] % could add 'p' placement to allow it to be on its own page
 \centering
 \includegraphics[width=1\textwidth]{figs/fig_main.pdf}
-\caption{\label{fig:main_summary}Summary of normal quarantine length predictions for each site.}
+\caption{\label{fig:main_summary}Summary of normal quarantine length predictions for each site.
+Year range of input temperature data used is inclusive.}
 \end{figure*}
 
 
@@ -490,20 +484,40 @@ based on 95\% of MED-FOES simulations showing extirpation.}
 Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary}
 report the standard deviation ($\sigma$) of the normal for DD PQL and MED-FOES PQL respectively.
 These indicate the year to year variability of the PQL for outbreaks starting at a
-given time of the year and can be used to indicate the uncertainty of quarantine length predictions 
+given time of the year and can be used to gauge the uncertainty of quarantine length predictions 
 relative to the actual quarantine length which will be required.
 Similar information is represented by the inter-quartile ranges shown in figure \ref{fig:latitude_trend} and 
 the `supernorm' supplemental figures.
 
-With the exception of SFO, the mean normal is a good predictor of DD PQL with the  ....
+Excluding SFO, the mean normal is a good predictor of DD PQL with values normally below 20 days
+except for the late summer and early autumn, where variance increases 
+due to quarantines extending through the cold season.
+FAT and, to a lesser extent, RIV show this increase more dramtically, presumably due to their more 
+aird/inland climates where both daily and seasonal temperature ranges are larger
+(also see figure \ref{fig:main_summary}).
+The standard deviation generally decreases with latitude.
 
-%The outlier nature of SFO with respect to DD PQL is obvious in figure \ref{fig:DD_variation_summary};
-%While the $\sigma$ for other sites is below 20 days for the majority of outbreak start dates
-%and rise above only for outbreaks starting in the late summer or autumn, 
-%SFO's DD PQL $\sigma$ is around 100 days for winter outbreaks 
-%and decreases down to about 40 days for late summer outbreaks.
-%This is due to the colder temperatures leading to extremely long degree day based quarantine predictions
-%frequently extending across two winter seasons.
+The standard deviation in DD PQL for SFO shows a inversion of the seasonal trend othe sites exhibit.
+This is due to the colder temperatures leading to extremely long degree day based quarantine predictions
+frequently extending across two winter seasons.
+
+The standard deviation of MED-FOES based PQL normals shown in figure \ref{fig:pe95_variation_summary}
+are generally about \nicefrac{1}{2} as large as for DD based PQL.
+This indicates that MED-FOES PQL not only shows less dramatic seasonal swings, but is also
+produces more consistent predictions across years.
+Values again generally decrease with latitude, but less consistently than DD PQL $\sigma$ of normals.
+Also, unlike with the DD PQL, the results for SFO appear consistent with other sites.
+
+A feature of interest is that BUR, LAX, and SAN all show an increase in the year to year variation
+in MED-FOES PQL starting in July and extending through November, 
+while that increase for all other sites starts in July or August 
+but extends all the way to January or Feburary.
+
+Results for FAT show a sharp increase in uncertainty starting in September, which fits with the 
+more aird/inland climate.  RIV shows a significant but more gradual increase.
+
+Overall, 
+
 
 
 
