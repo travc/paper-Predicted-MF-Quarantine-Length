@@ -19,9 +19,12 @@
 \usepackage{url}
 \def\UrlBreaks{\do\/\do-}
 
+% Can turn off hyperref if it unwanted, but it is generally useful IMO
+\usepackage{hyperref}
+
 \begin{document}
 
-\title{Evaluation of predicted medfly (\textit{Ceratitis capitata}) quarantine length in the United States utilizing degree-day and agent-based models}
+\title{Evaluation of predicted Medfly (\textit{Ceratitis capitata}) quarantine length in the United States utilizing degree-day and agent-based models}
 % \titlenote{The title should be detailed enough for someone to know whether the article would be of interest to them, but also concise. Please ensure the broadness and claims within the title are appropriate to the content of the article itself.}
 
 \author[1,2]{Travis C. Collier}
@@ -125,7 +128,7 @@ and more recently in Florida (add citation on Florida).
 
 One of the most important instances of repeated invasion 
 and extirpation by an economically important pest is that of 
-the Mediterranean fruit fly \textit{Ceratitis capitata} (or medfly) 
+the Mediterranean fruit fly \textit{Ceratitis capitata} (Wiedemann), aka. Medfly, 
 in California.  
 The last four decades have seen a repeated pattern of
 invasion, detection, and response 
@@ -164,7 +167,9 @@ by calculating the amount of time required for a given number
 of generations to elapse under a thermal unit a accumulation (``degree day'')
 physiological development model (CITE).
 Degree day based quarantine lengths have been codified in some legal
-regulations, including California\cite{3-CA-ADC-3406}.
+regulations, including United States Federal 
+(@TCC make ref:Title 7 Subtitle B Chapter III Part 301.32-10 Treatments)
+and California\cite{3-CA-ADC-3406}.
 However, the procedure prescribed only defines when the end of a
 quarantine period has been reached after the fact.
 For planning and resource allocation, policy makers and managers 
@@ -359,9 +364,10 @@ For a variable of interest (eg. temperature or PQL),
 all values for the same calendar day irrespective of year (eg. 20-July) are
 aggregated and summary statistics such as mean, minimum, maximum, and standard deviation 
 are computed for each aggregation.
-Figure \ref{fig:main_summary} shows the minimum and maximum of the normals for temperatures
-along with the mean of the normal PQL based on 3 generation degree day accumulation 
-and MED-FOES 95\% extirpation.
+Figure \ref{fig:main_summary} shows 
+the mean of the normal PQL based on 3 generation degree day accumulation 
+and MED-FOES 95\% extirpation
+along with the minimum and maximum of the normals for temperatures.
 Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} show the 
 standard deviations ($\sigma$) of the normals for the degree day and MED-FOES based PQL.
 \texttt{Temperature functions.ipynb} contains the code used to perform normal calculations, 
@@ -373,8 +379,33 @@ While the latter is fairly common practice, it is not mathematically proper
 since, as with means, the normal of a function of $X$ is not generally equal to the function applied to the normal of $X$.
 Additionally, by computing the normals of the predicted quarantine durations, 
 we can investigate properties of the distribution of values as shown in 
-figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} and the ``supernorm" supplemental figures.
+figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} 
+and the ``supernorm" supplemental figures.
 
+%\subsection*{Historical quarantines}
+%
+%%\begin{figure}[ht!]
+%%\centering
+%%\includegraphics[width=0.4\textwidth]{figs/fig_historic_quarantines.pdf}
+%%\caption{\label{fig:historic_quarantines}
+%%Day-of-year timing and size of historic Medfly quarantines in CA.
+%%SFO 1980 and LAX 1991 were very long duration outliers.
+%%Quarantines before the preventative release program was initiated in 1994 are denoted by `X's.
+%%}
+%%\end{figure}
+%
+%A list of 34 Medfly quarantines in CA dating from 1975 to early 2017 was obtained from 
+%APHIS\cite{??}.  
+%Each quarantine location was associated with a site from the 11 sites analyzed here.
+%For a number of the historic quarantines, this is a rough association since temperature/climate
+%can vary significantly over a short distance, especially between coastal and more 
+%inland locations.
+%Temperature data from the nearest site and the historic quarantine start date was used to 
+%compute the 3 generation degree-day duration along with MED-FOES 95\% extirpation.
+%PQLs were also computed using the day-of-year of the historic quarantines 
+%and the mean of the normal PQL values for the nearest site.
+%Values are reported in the supplemental table ??.
+%%\ref{fig:historic_quarantines}
 
 \section*{Results}
 
@@ -416,23 +447,23 @@ This is also shown in the respective `supernorm' supplemental figures S?? and S?
 \subsection*{Seasonal dependence}
 
 The seasonal variation, evidenced by the general shape of the curves shown in figure \ref{fig:main_summary}, 
-is doubtless familiar to anyone engaged in medfly pest management.
+is doubtless familiar to anyone engaged in Medfly pest management.
 Outbreaks starting in the late summer, autumn, or early winter will extend through relatively cold periods
 where thermal dependent development will be slow and therefore extend the duration of quarantine required
 for 3 generations of degree days to accumulate (referred to as DD PQL hereafter).
 Similarly, outbreaks starting in the spring or early summer often lead to short quarantines due
 to the relatively high temperatures.
 
-This familiar pattern is also predicted by the MED-FOES ABS despite it being quite different in nature
-from simple degree day accumulation.
+This familiar pattern is also predicted by the MED-FOES ABS despite it being 
+quite different in nature from simple degree day accumulation.
 However, the MED-FOES predictions (pe95) show a smaller seasonal swing.
-pe95 generally predicts as smaller overall range of PQL,
+pe95 generally produces a smaller overall range of PQLs,
 with longer quarantines than DD PQL for spring and early summer outbreaks,
 and shorter quarantines for late summer through early winter.
 
 A particular feature of interest, shown most dramatically at FAT in figure \ref{fig:main_summary},
 is that MED-FOES PQL often flattens out or even dips for quarantines starting in the late 
-autumn or early winter.  This is due to relatively rare and brief cold-snaps,
+autumn or early winter.  This can be due to relatively rare and brief cold-snaps,
 normally lasting only a few hours, which increase mortality.
 Since DD PQL does not account for mortality, it misses the effect of cold-snaps entirely.
 This cold-snap effect is most clearly seen at more northern and 
@@ -462,8 +493,23 @@ An ordinary least squares fit to the median PQL at each site shows a significant
 both DD ($F{=}14.08$, $p{=}0.005$) and MED-FOES ($F{=}10.55$, $p{=}0.010$), but
 the DD based predictions are more sensitive to latitude than MED-FOES
 (coefficients of 17.39 and 4.78 respectively).
-Additionally, the predictions for SFO, and to a lesser extent FAT, where the DD model for medfly appears to
-break down are much better behaved under MED-FOES.
+Additionally, MED-FOES predictions are better behaved for SFO, and to a lesser extent FAT, 
+where the DD model for Medfly appears to break down.
+
+In addition to the variation associated with latitude, 
+large differences in PQLs computed for the same start date 
+can exist between even relatively nearby sites.
+For example, the differences in both degree day and MED-FOES PQLs 
+for the three sites in the Los Angeles region (LAX, BUR, RIV) 
+(shown in the supplemental figure \ref{sfig:??})
+show a strong seasonal component with a spike in July and/or August.
+The difference in DD PQL between LAX and BUR is normally about a month
+(overall median=35 days; overall 25\% \& 75\% quantiles are 28 \& 45 days), 
+but the median difference of the normal exceeds 75 days in August with some 
+PQL differences up to 142 days.
+Differences in MED-FOES PQLs are more seasonally stable, 
+with the LAX minus BUR difference not exceeding 42 days at its maximum.
+
 
 \subsection*{Variance and uncertainty}
 
@@ -483,101 +529,219 @@ based on 95\% of MED-FOES simulations showing extirpation.}
 
 
 Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary}
-report the standard deviation ($\sigma$) of the normal for DD PQL and MED-FOES PQL respectively.
+report the standard deviation ($\sigma$) of the normal for DD PQL and MED-FOES PQL 
+respectively.
 These indicate the year to year variability of the PQL for outbreaks starting at a
-given time of the year and can be used to gauge the uncertainty of quarantine length predictions 
-relative to the actual quarantine length which will be required.
-Similar information is represented by the inter-quartile ranges shown in figure \ref{fig:latitude_trend} and 
-the `supernorm' supplemental figures.
-Those `supernorm' figures also show that the underlying distributions of PQL values are generally
-not highly skewed, making $\sigma$ a realatively easy to interpret proxy for uncertainty.
+given time of the year and can be used to gauge the uncertainty of quarantine 
+length predictions relative to the actual quarantine length which will be required.
+Similar information is represented by the inter-quartile ranges 
+shown in figure \ref{fig:latitude_trend} and the `supernorm' supplemental figures.
+Those `supernorm' figures also show that the underlying distributions of PQL 
+values are generally not highly skewed, making $\sigma$ a relatively easy to interpret 
+proxy for uncertainty.
 
 Excluding SFO, the mean normal is a good predictor of DD PQL with values below 20 days
 except for the late summer and early autumn, where variance increases 
 due to quarantines extending through the cold season.
-FAT and, to a lesser extent, RIV show this increase more dramtically, presumably due to their more 
-aird/inland climates where both daily and seasonal temperature ranges are larger
+FAT and, to a lesser extent, RIV show this increase more dramatically, presumably due to their more 
+arid/inland climates where both daily and seasonal temperature ranges are larger
 (also see figure \ref{fig:main_summary}).
 The standard deviation generally decreases with latitude.
 
-The standard deviation in DD PQL for SFO shows a inversion of the seasonal trend othe sites exhibit.
-This is due to the colder temperatures leading to extremely long degree day based quarantine predictions
-frequently extending across two winter seasons.
+The standard deviation in DD PQL for SFO shows a inversion of the seasonal trend 
+other sites exhibit.
+This is due to the colder temperatures leading to extremely long degree day based 
+quarantine predictions frequently extending across two winter seasons.
 
-The standard deviations of MED-FOES based PQL normals shown in figure \ref{fig:pe95_variation_summary}
+The standard deviations of MED-FOES based PQL normals 
+shown in figure \ref{fig:pe95_variation_summary}
 are generally about \nicefrac{1}{2} as large as for DD based PQL.
-This indicates that MED-FOES PQL not only shows less dramatic seasonal swings, but is also
-produces more consistent predictions across years.
+This indicates that MED-FOES PQL not only shows less dramatic seasonal swings, 
+but is also produces more consistent predictions across years.
 Values again generally decrease with latitude, but less consistently than DD PQL $\sigma$ of normals.
 Also, unlike with the DD PQL, the results for SFO appear consistent with other sites.
 
-A feature of interest is that BUR, LAX, and SAN all show an increase in the year to year variation
+A notable feature is that BUR, LAX, and SAN all show an increase in the year to year variation
 in MED-FOES PQL starting in July and extending through November, 
 while that increase for all other sites starts in July or August 
-but extends all the way to January or Feburary.
-[@TCC: ANY CLUE WHY?]
-Additionally, results for FAT show a sharp increase in uncertainty starting in September, which fits with the 
+but extends all the way to January or February.
+Additionally, results for FAT show a sharp increase in uncertainty starting in September, fitting with the 
 more aird/inland climate.  RIV shows a significant but more gradual increase.
+
+\subsection*{Extrapolation from historical quarantines}
+
+A list of 34 Medfly quarantines in CA dating from 1975 to early 2017 was obtained from 
+APHIS\cite{??} and is shown in the supplemental table ??.
+All but two of these quarantines were declared in the latter half of the year
+(July through December) where DD PQLs are typically relatively long,
+with 68\% ($23/34$) occurring in September through October where DD PQLs are
+longest. 
+August, the month where uncertainty in DD PQL often spikes 
+(see figure \ref{fig:DD_variation_summary}), 
+accounts for 30\% ($7/34$) of historic quarantines.
+
+DD and MED-FOES based PQLs were computed using the start date for each historic
+quarantine and the temperature data from the closest site from the 11 analyzed
+here.
+
+MED-FOES vs DD PQLs ...
+
+DD start date vs normal for DOY
+count    34.000000
+mean     -6.419693
+std      25.900133
+min     -77.712121
+25%     -17.462121
+50%      -4.696970
+75%      11.454017
+max      36.106061
+
+pe95 start date vs normal for DOY
+count    34.000000
+mean     -0.589953
+std       8.224247
+min     -22.856247
+25%      -2.743608
+50%      -0.464263
+75%       3.316532
+max      16.445749
+
+DD-pe95 start date
+count     34.000000
+mean      64.480820
+std       62.604590
+min      -40.071429
+25%       38.956184
+50%       66.982143
+75%       93.590774
+max      191.805556
+
+Taking historical quarantine declaration dates as a guide,
+MED-FOES PQLs greater stability and shorter durations for quarantines spanning cold
+weather 
+
+
+%Each quarantine location was associated with a site from the 11 sites analyzed here.
+%For a number of the historic quarantines, this is a rough association since temperature/climate
+%can vary significantly over a short distance, especially between coastal and more 
+%inland locations.
+%Temperature data from the nearest site and the historic quarantine start date was used to 
+%compute the 3 generation degree-day duration along with MED-FOES 95\% extirpation.
+%PQLs were also computed using the day-of-year of the historic quarantines 
+%and the mean of the normal PQL values for the nearest site.
+%Values are reported in the supplemental table ??.
+
+
 
 
 \section*{Discussion}
 % The discussion should include the implications of the article results in view of prior work in this field.
 
 The principal contributions of this work can be broken down into three categories: 
-1) Variation in average PQLs across time of year and space, 2) variation in PQLs within a time of year 
-and location, and 3) comparison of PQLs as determined by the DD and ABS methods. Consideration of all three  by program managers, planners and other decision makers is likely to 
-improve quarantines by informing resource allocation ahead of outbreaks, reducing 
+1) Comparison of PQLs as determined by the DD and ABS methods. 
+2) variation in average PQLs across time of year and space, and
+3) variation in PQLs within a time of year and location.
+Consideration of all three of these by program managers, planners and other decision makers 
+is likely to improve quarantines by informing resource allocation ahead of outbreaks, reducing 
 quarantine costs in some cases, and reducing risk from premature quarantine suspension in others. 
+The results presented cover most of the latitudinal range 
+of Medfly suitability within the United States 
+as well as many sites of probable introduction,
+and will hopefully find use as a general guide.
 
-As expected, there is significant variation in PQL depending on the location of the outbreak, with the 
-extremes in our study sites represented by Miami and San Fransisco. These geographic results could be
+% overall comparison of DD and ABD PQLs here.
+
+Extirpation models are extremely difficult to test for accuracy given 
+the impracticality of experimental introductions and 
+the sparse and idiosyncratic nature of historic outbreaks.
+
+Requiring a fixed number (typically 3) generations of degree days to pass is 
+a "tried and true" method, but not explicitly an extirpation model.
+It may overestimate required quarantine length through cold weather\cite{??}
+and may underestimate length when growth conditions are very favorable, 
+which somewhat paradoxically leads to quicker extirpation under SIT.
+However, the simplicity of degree day and the "has worked so far" nature
+means it will likely continue to be the regulatory benchmark.
+
+ABS results may be used to inform and modulate responses and treatments which are under
+the discretion of managers.
+In situations where DD PQL greatly exceed those from MED-FOES, it is likely
+that DD is missing important effects such as cold snaps which may justify
+shortening quarantine periods.
+On the other hand, in cases where MED-FOES predicts longer times to extirpation, it
+is plausible that the DD model is overly generous and it is critical that 
+eradication treatments and SIT releases be conducted aggressively.
+
+
+A few specific results arising from overall comparisons of different locations are worth highlighting. 
+In general, DD PQL for Medfly around San Fransisco are almost certainly too long for the entire year.
+The ABS PQLs are flatter and seem more realistic at around 200 days for San
+Fransisco compared with the 400-550 days of DD PQLs. 
+For several other California locations (typified by Fresno and 
+Riverside) DD PQLs are in close alignment with those from the ABS for the first half of the year,
+but go significantly longer in the cooler months. 
+For three of four Florida locations analyzed, DD PQLs are significantly shorter than the ABS results
+ (Miami, Tampa, and Orlando).
+The extent of the difference in those Florida locations is smaller in the later months of the year,
+but the generality of this pattern suggests that the margin of safety for quarantines as 
+calculated by DD in those locations may be smaller than expected. 
+
+Other systematic comparisons of (PQLs? development?) include .. (PLUG Davis paper here) 
+% Are there other papers we should compare with here? I would guess yes...
+
+
+As expected, there is significant variation in PQL depending on the location of the outbreak, 
+with the extremes in our study sites represented by Miami and San Fransisco.
+These geographic results could be
 compared directly to previous efforts to model climatic suitability of different parts of the US 
-for Medfly, by equating longer PQLs with higher climatic suitability. One of the early studies on the 
-subject focused on Medfly found higher climatic suitability in Florida locations (Fort Pierce and
-Orlando) compared with California sites \cite{messenger_bioclimatic_1954}. Within California, however, those authors
-found a higher number of suitable months in coastal areas such as Oceanside compared with Riverside and
-Fresno, roughly paralleling our findings (compare Los Angeles or San Diego with Fresno or Riverside). A more
-recent analysis of climatic suitability likewise concludes that coastal S. California is the most 
-favorable area of the state for Medfly, but favorability drops inland in the south due to desert
-conditions. Suitability in central and northern California
-is limited by cold temperatures and freezes \cite{gutierrez_assessing_2011}. 
-
+for Medfly, by equating longer PQLs with higher climatic suitability.
+One of the early studies on the subject focused on Medfly found higher climatic suitability in 
+Florida locations (Fort Pierce and Orlando) compared with California 
+sites \cite{messenger_bioclimatic_1954}. 
+Within California, however, those authors found a higher number of suitable months in coastal 
+areas such as Oceanside compared with Riverside and Fresno, roughly paralleling our 
+findings (compare Los Angeles or San Diego with Fresno or Riverside).
+A more recent analysis of climatic suitability likewise concludes that coastal 
+S. California is the most favorable area of the state for Medfly, but 
+favorability drops inland in the south due to desert conditions.
+Suitability in central and northern California is limited by cold temperatures and 
+freezes \cite{gutierrez_assessing_2011}. 
 
 Seasonal variation within locations revealed WORDS ON SEASONAL HERE
 
 % variation within location/time
 An important aspect of PQLs from the ABS is variation within particular times of years and locations. 
-Rare events like cold snaps can increase mortality in the ABS, and thereby lead to shorter PQLs than expected
-based on historical averages, or DD PQLs. The specificity of the ABS is particularly useful in determining 
-when quarantines might be safely suspended due to a rare event, something that would not be captured 
-by the DD model. The DD model includes only development for generating PQLs, and development is halted at low temperatures, extending quarantine lengths. The ABS, however, also includes mortality for generating PQLs,
-which means that low temperatures can significantly reduce estimates. % perhaps name names of locations
+Rare events like cold snaps can increase mortality in the ABS,
+and thereby lead to shorter PQLs than expected based on historical averages, or DD PQLs.
+The specificity of the ABS is particularly useful in determining 
+when quarantines might be safely suspended due to a rare event,
+something that would not be captured by the DD model.
+The DD model includes only development for generating PQLs,
+and development is halted at low temperatures, extending quarantine lengths.
+The ABS, however, also includes mortality for generating PQLs,
+which means that low temperatures can significantly reduce estimates.
+% perhaps name names of locations
 % where the variation is particularly acute (like FAT?)
 % Possibly put a paragraph on variation in PQLs seen in figs 3,4- patterns different for ABS vs DD
 
-% overall comparison of DD and ABD PQLs here.
-A few specific results arising from overall comparisons of different locations are worth highlighting. 
-In general, DD PQL for Medfly in San Fransisco and the Bay Area are almost certainly too long
-for the entire year. The ABS PQLs are flatter and seem more realistic at around 200 days for San
-Fransisco compared with the 400-550 days of DD PQLs. 
-For several other California locations (typified by Fresno and 
-Riverside) DD PQLs are in close alignment with those from the ABS for the first half of the year, but 
-go significantly longer in the cooler months. 
-For 
-three of four Florida locations analyzed DD PQLs are significantly shorter than the ABS results
- (Miami, Tampa, and Orlando). The extent of the difference in those Florida locations
-is smaller in the later months of the year, but the generality of this pattern suggests that 
-the margin of safety for quarantines as calculated by DD in those locations may be smaller than expected. 
 
-
-Other systematic comparisons of (PQLs? development?) include .. (PLUG Davis paper here) 
-% Are there other papers we should compare with here? I would guess yes...
+%%%%%
 
 By expanding on previous work \cite{manoukis_agent-based_2014}, this study suggests that an 
 improved approach to setting quarantine lengths would 
-include estimates from the DD method and from the ABS. Initial PQLs could be based on historical
-temperature averages and simple DD calculations, which could be completed quickly after detection to 
-allow declaration of quarantine. Once the eradication program is underway, weekly simulations
+include estimates from the DD method and from the ABS.
+
+The initial quarantine length estimate could be quickly produced based on the distribution of PQL values
+generated using historical temperatures.
+This would generate not just a single 'typical' value as the current method of projecting
+using historical average/normal temperatures does.
+The median 'most likely' value may be used for official estimates, while
+the variance and extremes would provide managers and affected parties additional
+information vital for planning.
+
+
+
+Once the eradication program is underway, weekly simulations
 via the ABS could indicate the likelihood that extirpation has been achieved. If the threshold 
 95\% extirpation is observed the decision to end quarantine early could be made, or in the case 
 where the ABS has not reached the 95\% threshold at the end of the DD PQL additional measures could 
