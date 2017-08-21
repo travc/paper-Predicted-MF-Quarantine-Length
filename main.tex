@@ -479,7 +479,7 @@ particularly FAT and RIV, but also BUR, LAX, JAX, and IAH.
 For each site, the mean, median, and inter-quartile range are shown (similar to a boxplot).
 An ordinary least-squares linear fit to the median values is shown by the green lines.
 The left pane is for single sine degree day predictions,
-and MED-FOES based predictions (pe95) in the right pane.
+and MED-FOES based predictions are in the right pane.
 }
 \end{figure*}
 
@@ -581,55 +581,43 @@ August, the month where uncertainty in DD PQL often spikes
 accounts for 30\% ($7/34$) of historic quarantines.
 
 DD and MED-FOES based PQLs were computed using the start date for each historic
-quarantine and the temperature data from the closest site from the 11 analyzed
-here.
+quarantine and the temperature data from the closest site of the 11 analyzed
+here (see supplemental table ??).
+For this set of hypothetical quarantines, 
+MED-FOES produced significantly shorter quarantines
+(mean=169.7 days, $\sigma$=21.8 days)
+than simple 3 generation DD accumulation
+(mean=234.2 days, $\sigma$=79.2 days)
+(t-statistic=6.01, $p<10^{-5}$).
+Additionally, the variance in the difference between quarantine lengths
+using a specific date and the mean of the normal PQL for that day of year
+were smaller for MED-FOES ($\sigma$=8.2 days)
+than with DD ($\sigma$=25.9 days)
+(F-statistic=9.92, $p<10^{-8}$).
 
-MED-FOES vs DD PQLs ...
-
-DD start date vs normal for DOY
-count    34.000000
-mean     -6.419693
-std      25.900133
-min     -77.712121
-25%     -17.462121
-50%      -4.696970
-75%      11.454017
-max      36.106061
-
-pe95 start date vs normal for DOY
-count    34.000000
-mean     -0.589953
-std       8.224247
-min     -22.856247
-25%      -2.743608
-50%      -0.464263
-75%       3.316532
-max      16.445749
-
-DD-pe95 start date
-count     34.000000
-mean      64.480820
-std       62.604590
-min      -40.071429
-25%       38.956184
-50%       66.982143
-75%       93.590774
-max      191.805556
-
-Taking historical quarantine declaration dates as a guide,
-MED-FOES PQLs greater stability and shorter durations for quarantines spanning cold
-weather 
-
-
-%Each quarantine location was associated with a site from the 11 sites analyzed here.
-%For a number of the historic quarantines, this is a rough association since temperature/climate
-%can vary significantly over a short distance, especially between coastal and more 
-%inland locations.
-%Temperature data from the nearest site and the historic quarantine start date was used to 
-%compute the 3 generation degree-day duration along with MED-FOES 95\% extirpation.
-%PQLs were also computed using the day-of-year of the historic quarantines 
-%and the mean of the normal PQL values for the nearest site.
-%Values are reported in the supplemental table ??.
+% @ TCC Maybe for supplemental...
+%\begin{table}[htb!]
+%\hrule \vspace{0.1cm}
+%\caption{\label{tab:histoirc_quarantine_PQL}
+%}
+%\centering
+%\begin{tabledata}{lrrr}
+%\header & 
+%\vtop{\hbox{\strut DD PQL $-$}\hbox{\strut normal}} &
+%\vtop{\hbox{\strut MED-FOES PQL $-$}\hbox{\strut normal}} &
+%\vtop{\hbox{\strut DD PQL $-$}\hbox{\strut MED-FOES PQL}} \\
+%%\header & DD PQL - normal & MED-FOES PQL - normal & DD PQL - MED-FOES PQL\\
+%\header & \multicolumn{3}{c}{[days]} \\
+%\row N        & 34    & 34    & 34    \\
+%\row mean     & -6.4  & -0.6  & 64.5  \\
+%\row $\sigma$ & 25.9  & 8.2   & 62.6  \\
+%\row min      & -77.7 & -22.9 & -40.1 \\
+%\row 25\%     & -17.5 & -2.7  & 39.0  \\
+%\row 50\%     & -4.7  & -0.5  & 67.0  \\
+%\row 75\%     & 11.5  & 3.3   & 93.6  \\
+%\row max      & 36.1  & 16.4  & 191.8 \\
+%\end{tabledata}
+%\end{table}
 
 
 
@@ -660,8 +648,8 @@ a "tried and true" method, but not explicitly an extirpation model.
 It may overestimate required quarantine length through cold weather\cite{??}
 and may underestimate length when growth conditions are very favorable, 
 which somewhat paradoxically leads to quicker extirpation under SIT.
-However, the simplicity of degree day and the "has worked so far" nature
-means it will likely continue to be the regulatory benchmark.
+%However, the simplicity of degree day and the "has worked so far" nature
+%means it will likely continue to be the regulatory benchmark.
 
 ABS results may be used to inform and modulate responses and treatments which are under
 the discretion of managers.
@@ -669,18 +657,22 @@ In situations where DD PQL greatly exceed those from MED-FOES, it is likely
 that DD is missing important effects such as cold snaps which may justify
 shortening quarantine periods.
 On the other hand, in cases where MED-FOES predicts longer times to extirpation, it
-is plausible that the DD model is overly generous and it is critical that 
-eradication treatments and SIT releases be conducted aggressively.
+is plausible that the DD model is overly generous and 
+eradication treatments and SIT releases should be conducted aggressively.
 
 
 A few specific results arising from overall comparisons of different locations are worth highlighting. 
-In general, DD PQL for Medfly around San Fransisco are almost certainly too long for the entire year.
+In general, DD PQL for Medfly 
+generated from San Francisco International Airport temperature data
+ are almost certainly too long for the entire year.
 The ABS PQLs are flatter and seem more realistic at around 200 days for San
 Fransisco compared with the 400-550 days of DD PQLs. 
 For several other California locations (typified by Fresno and 
-Riverside) DD PQLs are in close alignment with those from the ABS for the first half of the year,
+Riverside) DD PQLs are in close alignment with those from the ABS 
+for the first half of the year 
 but go significantly longer in the cooler months. 
-For three of four Florida locations analyzed, DD PQLs are significantly shorter than the ABS results
+For three of four Florida locations analyzed, 
+DD PQLs are significantly shorter than the ABS results
  (Miami, Tampa, and Orlando).
 The extent of the difference in those Florida locations is smaller in the later months of the year,
 but the generality of this pattern suggests that the margin of safety for quarantines as 
