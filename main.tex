@@ -40,8 +40,33 @@ Hilo, Hawaii, 96720, USA}
 \maketitle
 \thispagestyle{fancy}
 
-\begin{abstract}
-Abstracts should be up to 300 words and provide a succinct summary of the article. Although the abstract should explain why the article might be interesting, care should be taken not to inappropriately over-emphasize the importance of the work described in the article. Citations should not be used in the abstract, and the use of abbreviations should be minimized. If you are writing a Research or Systematic Review article, please structure your abstract into Background, Methods, Results, and Conclusions.
+\begin{abstract} % max 300 words!
+Invasions by pest insects pose a significant threat to agriculture world-wide. In the case of
+\emph{Ceratitis capitata} incursions on the US mainland, where it is not officially established,
+repeated detections are followed by 
+quarantines to eliminate the invading population. However, it is notoriously difficult to set quarantine
+duration because the non-detection of the pest does not necessarily mean the pest
+is extirpated. Most programs determine quarantine lengths 
+by calculating the amount of time required for 3 generations to elapse under a thermal unit 
+accumulation development model (``degree day''). 
+A newer approach is to use an Agent-Based Simulation (ABS) to 
+explicitly simulate population demographics and extirpation. Here, the predicted 
+quarantine length for 11 sites in the continental United States were evaluated. Results indicate that 
+strong seasonality in quarantine length, with longer predictions in the second half of the year compared with the first; this pattern was more extreme in the degree day predictions compared 
+with the ABS. Geographically, quarantine lengths increased with latitude, though again this feature was 
+less pronounced under the ABS. Variation in quarantine lengths for particular times and places was 
+significantly higher for degree day versus ABS, and generally peaked in the middle of the year for the
+former and second half of the year for the latter. Analysis of 34 \emph{C. capitata} quarantines
+from 1975 to 2017 in California shows that 
+all but two were declared in the second half of the year, when degree day quarantine lengths are
+longest and have the highest uncertainty.
+For this set of hypothetical quarantines, 
+the ABS produced significantly shorter quarantines
+than degree day calculations. 
+Overall, ABS quarantine lengths were more consistent than degree day predictions, avoided unrealistically long values seen in the northermost site studied (San Fransisco), 
+and realistically modeled the effects of rare events such as cold snaps.
+%Results presented here should be useful to program managers and planners preparing for 
+%detection and extirpation of \emph{C. capitata} in the mainland US.
 \end{abstract}
 
 \section*{Keywords}
@@ -52,41 +77,41 @@ biosecurity, Mediterranean fruit fly, eradication, invasive pest, agriculture
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TO REMOVE:
-
-Take-homes:
-\begin{enumerate}
-\item There is significant variation in predicted quarantine length 
-at different times and locations.
-  \begin{enumerate}
-  \item Captured by normals
-  \item Climate
-  \end{enumerate}
-\item Variation in prediction within time / location (across years) 
-is important.
-  \begin{enumerate}
-  \item Captured by day-of-year (between-year) variation
-  \item Informs reliability of prediction
-  \item Influenced by rare events (eg. cold snaps)
-  \item Prediction based on normal temps vs normal 
-  of predictions based on measured temps
-  \end{enumerate}
-\item DD vs ABS comparison
-  \begin{enumerate}
-  \item ABS is better behaved
-    \begin{enumerate}
-    \item Seasonal swings less dramatic; 
-    Much less discontinuity at beginning of autumn 
-    \item Smaller overall range
-    \item Captures common-sense effects missed by DD: 
-    eg. extreme cold kills
-    \end{enumerate}
-  \item Large disagreement between DD and ABS may indicate 
-  DD prediction is unreliable/broken
-  \item Variance in predictions should inform management and planning.
-  ABS variance is easier to interpret (KFAT being a dramatic example).
-  \end{enumerate}
-\end{enumerate}
+%TO REMOVE:
+%
+%Take-homes:
+%\begin{enumerate}
+%\item There is significant variation in predicted quarantine length 
+%at different times and locations.
+%  \begin{enumerate}
+%  \item Captured by normals
+%  \item Climate
+%  \end{enumerate}
+%\item Variation in prediction within time / location (across years) 
+%is important.
+%  \begin{enumerate}
+%  \item Captured by day-of-year (between-year) variation
+%  \item Informs reliability of prediction
+%  \item Influenced by rare events (eg. cold snaps)
+%  \item Prediction based on normal temps vs normal 
+%  of predictions based on measured temps
+%  \end{enumerate}
+%\item DD vs ABS comparison
+%  \begin{enumerate}
+%  \item ABS is better behaved
+%    \begin{enumerate}
+%    \item Seasonal swings less dramatic; 
+%    Much less discontinuity at beginning of autumn 
+%    \item Smaller overall range
+%    \item Captures common-sense effects missed by DD: 
+%    eg. extreme cold kills
+%    \end{enumerate}
+%  \item Large disagreement between DD and ABS may indicate 
+%  DD prediction is unreliable/broken
+%  \item Variance in predictions should inform management and planning.
+%  ABS variance is easier to interpret (KFAT being a dramatic example).
+%  \end{enumerate}
+%\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,9 +120,8 @@ is important.
 Invasions by insects, pathogens and pests increasingly appear to be a 
 defining challenge of the 21\textsuperscript{st} century, facilitated by global connectivity, climatic shifts, and
 other factors \cite{simberloff_impacts_2013} (find paper on number of invasive species).
-Invasions by insects that do not become established are by their nature less
-likely to be detected than those that are ``successful''
-from the point of view of the insect.
+Invasions by insects that do not become established have a lower public profile
+than those that are ``successful'' from the point of view of the insect.
 However, when the invading species is of environmental, human health, or 
 economic concern there is a greater chance that cases of invasion followed 
 by extirpation would be detected 
@@ -105,15 +129,16 @@ and studied \cite{liebhold_population_2008}.
 Eradication of such insects can be desirable and 
 feasible \cite{myers_eradication_2000} depending on several factors.
 
-One factor might be that the new environment is only marginally or 
+One factor is if the new environment is only marginally or 
 seasonally suitable to the invading insect, facilitating its eradication.
-Another is that the high cost of allowing establishment leads
+Another is when the high cost of allowing establishment leads
 to extensive efforts for eradication.
 The invasion of the malaria mosquito species \textit{Anopheles gambiae}
 into Northeastern Brazil in the 1930's \cite{soper_emphanopheles_1943}
 is one example of an invasive insect that was successfully eradicated 
 primarily due to the second of these
 reasons \cite{causey_ecology_1943,killeen_eradication_2002}.
+
 In the case of \textit{An. gambiae} there have been no reports of
 reinvasion, but there are examples of insects that
 recurrently invade areas outside their native range and are recurrently
@@ -127,24 +152,24 @@ Panama\cite{robinson_enabling_2009}
 and more recently in Florida (add citation on Florida).
 
 One of the most important instances of repeated invasion 
-and extirpation by an economically important pest is that of 
-the Mediterranean fruit fly \textit{Ceratitis capitata} (Wiedemann), aka. Medfly, 
+and extirpation by an economically important insect pest is that of 
+the Mediterranean fruit fly \textit{Ceratitis capitata} (Wiedemann), aka. ``Medfly'', 
 in California.  
 The last four decades have seen a repeated pattern of
 invasion, detection, and response 
 interspersed by periods of no detections \cite{carey_establishment_1991, papadopoulos_trickle_2013}.
 While it has been suggested that this pattern is the result of
-cryptic establishment of Medfly and other tephritids in California, 
+cryptic establishment of Medfly in California, 
 % Though the establishment of these pests is disputed, 
 %  a pattern of invasion, detection, and response, 
 %  followed by no further detections for a long period, 
 %  has been established over the last four decades. 
-Others have argued that Medfly in California is an example of 
+others have argued that Medfly in California is an example of 
 a ``metainvasion'', consisting of multiple sequential or
 overlapping introductions \cite{davies_bioinvasions_1999}. 
 Still other researchers have maintained 
 that Medfly is repeatedly eradicated
-from the state \cite{haymer_genetic_1997} or for different situations
+there \cite{haymer_genetic_1997}, or that there are different situations
 in different regions of the state
 \cite{bonizzoni_microsatellite_2001,gasperi_genetic_2002}.
 Medfly is occasionally found in 
@@ -154,17 +179,17 @@ free of the pest such as New Zealand (CHECK), and (some free areas here).
 
 The response plan to Medfly in California, and the other ``free'' 
 regions mentioned above, is extensive and costly, 
-including a quarantine \cite{gilbert_insect_2013}.
+including a quarantine when detections exceed an established threshold \cite{gilbert_insect_2013}.
 A practical and important problem is how long to maintain 
 the countermeasures and quarantine after flies are no longer detected.
 Predicting the likely duration of required quarantines would help with
-management decision making and planning,
+management decision-making and planning,
 including potential cost savings by having sufficient but not excessive
 resources available.
 
 Currently most programs determine quarantine lengths 
 by calculating the amount of time required for a given number 
-of generations to elapse under a thermal unit a accumulation (``degree day'')
+of generations (usually three) to elapse under a thermal unit accumulation (``degree day'')
 physiological development model (CITE).
 Degree day based quarantine lengths have been codified in some legal
 regulations, including United States Federal 
@@ -181,27 +206,28 @@ and also provides no indication as to the variance or uncertainty
 of those predictions.
 
 Recently, another approach to determining effective quarantine 
-durations was introduced via Agent-Based Simulations (ABS)\cite{manoukis_agent-based_2014}. 
-The MED-FOES system simulates a population of individual medflies 
-under inundative sterile insect technique (SIT) control, 
+durations against Medfly via Agent-Based Simulations (ABS)\cite{manoukis_agent-based_2014}
+was introduced. 
+The MED-FOES system simulates a population of individual Medflies 
+under inundative sterile insect technique (SIT) and other control, 
 explicitly modeling extirpation as opposed to the degree day 
-approach of just attempting to determine the time for a specific
-number of generations to elapse.
+approach which only determines the time for a specific
+number of generations to elapse to estimate quarantine duration.
 MED-FOES also allows for the sampling of parameter space
 (temperature dependent mortality for each stage, fecundity, etc.)
 producing a distribution of possible outcomes.
 
-In this paper, we analyzed the predicted quarantine length (PQL for short) 
-for 11 sites in the continental United States
+In this paper, predicted quarantine length (PQL for short) 
+for 11 sites in the continental United States were analyzed
 (figure \ref{fig:sitemap} and table \ref{tab:sites})
 based on both the standard thermal accumulation degree day method\cite{ECY:ECY1969503514} 
-as well as the MED-FOES\cite{manoukis_computer_2014} ABS under sterile insect technique (SIT)\cite{??} eradication.
-Seasonal variations dominate the variation in quarantine length predictions, 
+as well as the MED-FOES ABS\cite{manoukis_computer_2014}. 
+Seasonal variation dominates quarantine duration, 
 so we aggregated the PQL values for each day of the year 
-(Jan.\ 1, Jan.\ 2, ect.) 
-across a large number of years (65 for most of locations) to produce normals.
-This approach allows us not only to compare the standard degree day 
-method to the MED-FOES ABS, but more importantly provide insight 
+(Jan.\ 1, Jan.\ 2, ect.) %@NCM: wait, below we say weekly- harmonize here?
+across a large number of years (65 for most locations) to produce normals.
+This approach enables comparison of the standard degree day 
+method to the ABS, but more importantly provides insight 
 into seasonal and spatial variations, prediction uncertainties, 
 and model reliability.
 
@@ -284,11 +310,11 @@ were chosen for their biological relevance and
 availability of high quality hourly data over a long time frame.
 
 Sites are referred to here by the last three letters of the callsign shown in table \ref{tab:sites}.
-For 8 sites (SFO, FAT, LAX, RIV, SAN, JAx, TPA, and MIA), temperature data starting on 1950-01-01 was used.
+For 8 sites (SFO, FAT, LAX, RIV, SAN, JAX, TPA, and MIA), temperature data starting on 1950-01-01 was used.
 The 3 other sites contained large ($>$ 14 days) gaps or other problems in the early years of their data,
 so data starting on 1970-01-01 for IAH and 1973-01-01 for BUR and MCO was used.
 For all sites, temperature data from the start date through 2017-05-15 was used
-for quarantine length predictions for dates ranging from the start date for the site up to 2016-01-01.
+to generate PQLs for dates ranging from the start date to 2016-01-01.
 
 Data was fetched and parsed using the \texttt{Fetching and parsing ISH.ipynb} program.
 Records for the same station callsign were merged, since identification, format, 
@@ -313,7 +339,7 @@ regulation 3406(b)\cite{CDFA_Medfly,3-CA-ADC-3406}.
 %single-triangle\cite{10.2307/1933072}
 Since we have hourly temperature data, we also calculated degree-days by simple summation
 for comparison\cite{Roltsch1999}.
-For each date, the number of days required to pass 3 generations of degree-day 
+For each date, the number of days required for 3 generations of degree-day 
 based life cycles was computed.
 These calculations are implemented in \texttt{Temperature functions.ipynb} in the Supplemental Materials.
 
@@ -322,27 +348,34 @@ These calculations are implemented in \texttt{Temperature functions.ipynb} in th
 
 MED-FOES\cite{manoukis_computer_2014,manoukis_agent-based_2014} is 
 an agent-based simulation explicitly modeling the eradication of a population of Medflies 
-under inundative sterile male releases (aka: sterile insect technique or SIT).
+under inundative sterile male releases (aka: sterile insect technique or SIT) and other interventions
+such as increased trapping and foliar sprays.
 A MED-FOES simulation models a single non-spatial population starting from a given age distribution 
-and number of individuals through the time the population experiences extirpation when the last 
-potentially fertile female dies or mates with a sterile male.
+and tracks the number of individuals through the time the population experiences extirpation when the last 
+fly (Agent) dies.
 The simulation is parameterized on the initial population, additional mortality induced by control efforts,
 the effectiveness of SIT, and a large number of biological parameters for which ranges are known from 
 the literature, including temperature-dependent development and mortality.
-The simulation is fed the same hourly timeseries of temperature values which was used for degree-day calculations
-and updated in hourly time steps.
+The simulations were performed using the same hourly timeseries of temperature values 
+used for degree-day calculations and was updated in hourly time steps.
 
-Due to the fact that only ranges are known for many of the parameters,
-2500 individual MED-FOES simulations were run for each given start date at each site 
-sampling different regions of parameter-space using a Latin Hypercube Sampling\cite{10.2307/1403510} procedure.
-This set of simulations is referred to as a `run'.
+Due to the fact that ranges can be estimated for many of the parameters,
+2500 individual MED-FOES simulations were run for each start date at each site 
+evenly sampling different regions of parameter-space via Latin Hypercube Sampling\cite{10.2307/1403510} procedure.
+This set of simulations, encompassing a range of possible extirpation outcomes, is referred to as a `run'.
+%@NCM: I usually think of a ``run'' as a single simulation. Not sure it matters here- do we refer to runs
+% later?
+Run data are translated into PQL by the number of days from the start date required for
+95\% of the simulations in a run to be eradicated, also referred to as pe95.
+% @NCM I think we should standardize on either ABS PQL or pe95. I vote for the former as more consistent
+% with DD PQL, and also more commonly used. Can eliminate pe95?
 
 Varying the start date for different simulations was achieved by simply 
 starting at different points in the input temperature file; 
 for this study a run starting every 7 days over the range of dates available for each site.
 Each set of runs for a single site over a range of starting dates is referred to as a `runset'.
 All runsets were conducted with the same input parameters aside from temperature.
-Initial population numbers were chosen as a standard outbreak based upon several real 
+Initial population numbers were chosen as a ``standard outbreak'' based on seven real 
 outbreaks modeled previously\cite{manoukis_agent-based_2014}.
 
 MED-FOES version 0.6.2 was run under OGS/Grid Engine 2011.11 on a CentOS 6.6 HPC cluster.
@@ -352,8 +385,6 @@ each containing runs starting every 7 days over the input temperature data range
 where each run contained 2500 individual simulations sampling different regions of 
 biologically plausible parameter space.
 
-The MED-FOES data is summarized here by the number of days from the start date required for
-95\% of the simulations in a run to be eradicated, referred to as pe95.
 
 \subsection*{Statistical analysis}
 
@@ -364,12 +395,6 @@ For a variable of interest (eg. temperature or PQL),
 all values for the same calendar day irrespective of year (eg. 20-July) are
 aggregated and summary statistics such as mean, minimum, maximum, and standard deviation 
 are computed for each aggregation.
-Figure \ref{fig:main_summary} shows 
-the mean of the normal PQL based on 3 generation degree day accumulation 
-and MED-FOES 95\% extirpation
-along with the minimum and maximum of the normals for temperatures.
-Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} show the 
-standard deviations ($\sigma$) of the normals for the degree day and MED-FOES based PQL.
 \texttt{Temperature functions.ipynb} contains the code used to perform normal calculations, 
 and the code generating these figures is \texttt{Summary Figures.ipynb}.
 
@@ -409,6 +434,25 @@ and the ``supernorm" supplemental figures.
 
 \section*{Results}
 
+
+Figure \ref{fig:main_summary} shows 
+the mean of the normal PQL based on 3 generation degree day accumulation 
+and MED-FOES 95\% extirpation
+along with the minimum and maximum of the normals for temperatures.
+Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} show the 
+standard deviations ($\sigma$) of the normals for the degree day and MED-FOES based PQL.
+
+There is significant variation in PQL across both time and location.
+The temporal variation in PQL is dominated by a yearly cycle, 
+characterized by the normal values shown in figure \ref{fig:main_summary}.
+Table \ref{tab:variance_captured_by_normal} shows the percentage of variance in 
+quarantine length predictions, captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
+At all but one site, greater than 75\% of the variance in both degree day and MED-FOES based PQL
+is accounted for by the mean normal, and the majority exceed 90\%.
+SFO is an exception to this common trend, with the mean normal accounting for only 9.1\% of the variation in 
+degree day based PQL and 28.0\% of the MED-FOES based PQL.
+This is also shown in the respective `supernorm' supplemental figures S?? and S??.
+
 \begin{table}[htb!]
 \hrule \vspace{0.1cm}
 \caption{\label{tab:variance_captured_by_normal}
@@ -433,41 +477,31 @@ and pe95 is the MED-FOES agent-based simulation predictions.}
 \end{tabledata}
 \end{table}
 
-There is significant variation in PQL across both time and location.
-The temporal variation in PQL is dominated by a yearly cycle
-which is characterized well by the normal values shown in figure \ref{fig:main_summary}.
-Table \ref{tab:variance_captured_by_normal} shows the percentage of variance in 
-quarantine length predictions which is captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
-At all but one site, greater than 75\% of the variance in both degree day and MED-FOES based PQL
-is accounted for by the mean normal, and the majority exceed 90\%.
-SFO is an exception to the overall rule, with the mean normal accounting for only 9.1\% of the variation in 
-degree day based PQL and 28.0\% of the MED-FOES based PQL.
-This is also shown in the respective `supernorm' supplemental figures S?? and S??.
 
 \subsection*{Seasonal dependence}
 
-The seasonal variation, evidenced by the general shape of the curves shown in figure \ref{fig:main_summary}, 
+Seasonal variation, evidenced by the general shape of the curves shown in figure \ref{fig:main_summary}, 
 is doubtless familiar to anyone engaged in Medfly pest management.
-Outbreaks starting in the late summer, autumn, or early winter will extend through relatively cold periods
-where thermal dependent development will be slow and therefore extend the duration of quarantine required
+Outbreaks starting in the late summer, autumn, or early winter will extend through relatively cold periods,
+when thermal dependent development will be slow and therefore extend the duration of quarantine required
 for 3 generations of degree days to accumulate (referred to as DD PQL hereafter).
 Similarly, outbreaks starting in the spring or early summer often lead to short quarantines due
 to the relatively high temperatures.
 
-This familiar pattern is also predicted by the MED-FOES ABS despite it being 
+This familiar pattern is also seen in the MED-FOES ABS PQLs despite it being 
 quite different in nature from simple degree day accumulation.
 However, the MED-FOES predictions (pe95) show a smaller seasonal swing.
 pe95 generally produces a smaller overall range of PQLs,
 with longer quarantines than DD PQL for spring and early summer outbreaks,
-and shorter quarantines for late summer through early winter.
+and shorter quarantines for late summer through early winter in almost all cases.
 
 A particular feature of interest, shown most dramatically at FAT in figure \ref{fig:main_summary},
-is that MED-FOES PQL often flattens out or even dips for quarantines starting in the late 
+is that ABS PQL often flattens out or even dips for quarantines starting in the late 
 autumn or early winter.  This can be due to relatively rare and brief cold-snaps,
 normally lasting only a few hours, which increase mortality.
 Since DD PQL does not account for mortality, it misses the effect of cold-snaps entirely.
 This cold-snap effect is most clearly seen at more northern and 
-more inland sites where cold-snaps are more likely: 
+inland sites where cold-snaps are more likely: 
 particularly FAT and RIV, but also BUR, LAX, JAX, and IAH.
 
 \subsection*{Geographic dependence}
@@ -486,15 +520,16 @@ and MED-FOES based predictions are in the right pane.
 PQL generally shows a positive correlation with latitude\cite{??}.
 Sites are ordered by latitude in the figures and tables.
 As seen in figure \ref{fig:main_summary}, higher latitude sites tend to have longer PQL 
-as well as larger seasonal swings for both DD and MED-FOES based predictions.
+as well as larger seasonal swings for both degree day and MED-FOES based predictions.
 
 Figure \ref{fig:latitude_trend} shows the relationship between PQL and latitude.
 An ordinary least squares fit to the median PQL at each site shows a significant slope for
-both DD ($F{=}14.08$, $p{=}0.005$) and MED-FOES ($F{=}10.55$, $p{=}0.010$), but
-the DD based predictions are more sensitive to latitude than MED-FOES
+both DD PQL ($F{=}14.08$, $p{=}0.005$) and ABS PQL ($F{=}10.55$, $p{=}0.010$), but
+the degree day based predictions are more sensitive to latitude than MED-FOES
 (coefficients of 17.39 and 4.78 respectively).
-Additionally, MED-FOES predictions are better behaved for SFO, and to a lesser extent FAT, 
-where the DD model for Medfly appears to break down.
+Additionally, MED-FOES predictions are more stable for SFO, and to a lesser extent FAT, 
+where the degree day model for Medfly produced PQLs that appear either unrealistically long (SFO) 
+or are subject to rapid and extreme seasonal variation in the mid year (FAT).
 
 In addition to the variation associated with latitude, 
 large differences in PQLs computed for the same start date 
@@ -508,7 +543,7 @@ The difference in DD PQL between LAX and BUR is normally about a month
 but the median difference of the normal exceeds 75 days in August with some 
 PQL differences up to 142 days.
 Differences in MED-FOES PQLs are more seasonally stable, 
-with the LAX minus BUR difference not exceeding 42 days at its maximum.
+with the LAX minus BUR (MEAN?) difference not exceeding 42 days at its maximum.
 
 
 \subsection*{Variance and uncertainty}
@@ -540,22 +575,21 @@ Those `supernorm' figures also show that the underlying distributions of PQL
 values are generally not highly skewed, making $\sigma$ a relatively easy to interpret 
 proxy for uncertainty.
 
-Excluding SFO, the mean normal is a good predictor of DD PQL with values below 20 days
+Excluding SFO, the mean normal is a good predictor of DD PQL with $\sigma$ values below 20 days
 except for the late summer and early autumn, where variance increases 
 due to quarantines extending through the cold season.
 FAT and, to a lesser extent, RIV show this increase more dramatically, presumably due to their more 
 arid/inland climates where both daily and seasonal temperature ranges are larger
 (also see figure \ref{fig:main_summary}).
-The standard deviation generally decreases with latitude.
-
+The standard deviation generally decreases with decreasing latitude, together with reduced means.
 The standard deviation in DD PQL for SFO shows a inversion of the seasonal trend 
 other sites exhibit.
-This is due to the colder temperatures leading to extremely long degree day based 
-quarantine predictions frequently extending across two winter seasons.
+This is due to the colder temperatures leading to extremely long DD PQLs, 
+frequently extending across two winter seasons.
 
 The standard deviations of MED-FOES based PQL normals 
 shown in figure \ref{fig:pe95_variation_summary}
-are generally about \nicefrac{1}{2} as large as for DD based PQL.
+are generally about \nicefrac{1}{2} as large as for DD PQL.
 This indicates that MED-FOES PQL not only shows less dramatic seasonal swings, 
 but is also produces more consistent predictions across years.
 Values again generally decrease with latitude, but less consistently than DD PQL $\sigma$ of normals.
@@ -564,36 +598,37 @@ Also, unlike with the DD PQL, the results for SFO appear consistent with other s
 A notable feature is that BUR, LAX, and SAN all show an increase in the year to year variation
 in MED-FOES PQL starting in July and extending through November, 
 while that increase for all other sites starts in July or August 
-but extends all the way to January or February.
+but extends to January or February.
 Additionally, results for FAT show a sharp increase in uncertainty starting in September, fitting with the 
 more aird/inland climate.  RIV shows a significant but more gradual increase.
 
-\subsection*{Extrapolation from historical quarantines}
+\subsection*{Historical quarantines}
 
-A list of 34 Medfly quarantines in CA dating from 1975 to early 2017 was obtained from 
-APHIS\cite{??} and is shown in the supplemental table ??.
+34 Medfly quarantines in CA dating from 1975 to early 2017 were analyzed (supplemental table ??).
 All but two of these quarantines were declared in the latter half of the year
-(July through December) where DD PQLs are typically relatively long,
-with 68\% ($23/34$) occurring in September through October where DD PQLs are
-longest. 
+(July through December) when DD PQLs are typically relatively long,
+with 68\% ($23/34$) occurring in September through October (when DD PQLs are
+longest). 
 August, the month where uncertainty in DD PQL often spikes 
 (see figure \ref{fig:DD_variation_summary}), 
 accounts for 30\% ($7/34$) of historic quarantines.
 
-DD and MED-FOES based PQLs were computed using the start date for each historic
+DD PQLs and ABS PQLs were computed using the start date for each historic
 quarantine and the temperature data from the closest site of the 11 analyzed
 here (see supplemental table ??).
 For this set of hypothetical quarantines, 
 MED-FOES produced significantly shorter quarantines
 (mean=169.7 days, $\sigma$=21.8 days)
-than simple 3 generation DD accumulation
+than simple 3 generation degree day accumulation
 (mean=234.2 days, $\sigma$=79.2 days)
 (t-statistic=6.01, $p<10^{-5}$).
 Additionally, the variance in the difference between quarantine lengths
 using a specific date and the mean of the normal PQL for that day of year
 were smaller for MED-FOES ($\sigma$=8.2 days)
-than with DD ($\sigma$=25.9 days)
+than with degree day ($\sigma$=25.9 days)
 (F-statistic=9.92, $p<10^{-8}$).
+%@NCM: Give df in the above stats?
+
 
 % @ TCC Maybe for supplemental...
 %\begin{table}[htb!]
@@ -626,7 +661,7 @@ than with DD ($\sigma$=25.9 days)
 % The discussion should include the implications of the article results in view of prior work in this field.
 
 The principal contributions of this work can be broken down into three categories: 
-1) Comparison of PQLs as determined by the DD and ABS methods. 
+1) Comparison of PQLs as determined by the degree day and ABS methods. 
 2) variation in average PQLs across time of year and space, and
 3) variation in PQLs within a time of year and location.
 Consideration of all three of these by program managers, planners and other decision makers 
@@ -641,23 +676,27 @@ and will hopefully find use as a general guide.
 
 Extirpation models are extremely difficult to test for accuracy given 
 the impracticality of experimental introductions and 
-the sparse and idiosyncratic nature of historic outbreaks.
+the sparse and idiosyncratic nature of historic outbreaks. However, analyzing locations
+of historic outbreaks suggests that quarantine lengths would generally be more consistent
+and shorter on average in California if estimated by ABS compared with degree day. 
 
 Requiring a fixed number (typically 3) generations of degree days to pass is 
 a "tried and true" method, but not explicitly an extirpation model.
 It may overestimate required quarantine length through cold weather\cite{??}
 and may underestimate length when growth conditions are very favorable, 
-which somewhat paradoxically leads to quicker extirpation under SIT.
+which somewhat paradoxically leads to quicker extirpation under SIT (CITE?).
 %However, the simplicity of degree day and the "has worked so far" nature
 %means it will likely continue to be the regulatory benchmark.
+However, the simplicity of the degree day calculation is a point in its favor, together with 
+its record of generally avoiding subsequent detections after quarantine (CITE?)
 
 ABS results may be used to inform and modulate responses and treatments which are under
 the discretion of managers.
 In situations where DD PQL greatly exceed those from MED-FOES, it is likely
-that DD is missing important effects such as cold snaps which may justify
+that degree day is missing important effects such as cold snaps which may justify
 shortening quarantine periods.
 On the other hand, in cases where MED-FOES predicts longer times to extirpation, it
-is plausible that the DD model is overly generous and 
+is plausible that the degree day indicated quarantine is short, and 
 eradication treatments and SIT releases should be conducted aggressively.
 
 
@@ -676,7 +715,7 @@ DD PQLs are significantly shorter than the ABS results
  (Miami, Tampa, and Orlando).
 The extent of the difference in those Florida locations is smaller in the later months of the year,
 but the generality of this pattern suggests that the margin of safety for quarantines as 
-calculated by DD in those locations may be smaller than expected. 
+calculated by degree day in those locations may be smaller than expected. 
 
 Other systematic comparisons of (PQLs? development?) include .. (PLUG Davis paper here) 
 % Are there other papers we should compare with here? I would guess yes...
@@ -711,10 +750,10 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4222914/
 An important aspect of PQLs from the ABS is variation within particular times of years and locations. 
 Rare events like cold snaps can increase mortality in the ABS,
 and thereby lead to shorter PQLs than expected based on historical averages, or DD PQLs.
-The specificity of the ABS is particularly useful in determining 
+The specificity of the ABS is helpful for determining 
 when quarantines might be safely suspended due to a rare event,
-something that would not be captured by the DD model.
-The DD model includes only development for generating PQLs,
+something that might not be captured by the degree day model.
+The degree day model includes only development for generating PQLs,
 and development is halted at low temperatures, extending quarantine lengths.
 The ABS, however, also includes mortality for generating PQLs,
 which means that low temperatures can significantly reduce estimates.
@@ -723,10 +762,10 @@ which means that low temperatures can significantly reduce estimates.
 % Possibly put a paragraph on variation in PQLs seen in figs 3,4- patterns different for ABS vs DD
 
 In Calfornia, historically quarantines have most frequently occurred at times of year when 
-DD based quarantines are drawn out by cold weather and the MED-FOES ABS model predicts significantly
+degree day based quarantines are drawn out by cold weather and the MED-FOES ABS model predicts significantly
 shorter durations.
 Furthermore, 30\% of those historic quarantines happened in August where there is a great 
-deal of uncertainty in forward predictions of DD quarantine durations based on normal values.
+deal of uncertainty in forward predictions of degree day quarantine durations based on normal values.
 If we assume those historic CA quarantines are a guide, the ABS model would very likely
 produced more predictable and shorter quarantine durations for future outbreaks.
 
@@ -734,19 +773,17 @@ produced more predictable and shorter quarantine durations for future outbreaks.
 
 %%%%%
 
-By expanding on previous work \cite{manoukis_agent-based_2014}, this study suggests that an 
-improved approach to setting quarantine lengths would 
-include estimates from the DD method and from the ABS.
+%By expanding on previous work \cite{manoukis_agent-based_2014}, this study suggests that an 
+%improved approach to setting quarantine lengths would 
+%include estimates from the DD method and from the ABS.
 
 The initial quarantine length estimate could be quickly produced based on the distribution of PQL values
 generated using historical temperatures.
-This would generate not just a single 'typical' value as the current method of projecting
+This would generate not just a single ``typical'' value as the current method of projecting
 using historical average/normal temperatures does.
-The median 'most likely' value may be used for official estimates, while
+The median ``most likely'' value may be used for official estimates, while
 the variance and extremes would provide managers and affected parties additional
 information vital for planning.
-
-
 
 Once the eradication program is underway, weekly simulations
 via the ABS could indicate the likelihood that extirpation has been achieved. If the threshold 
@@ -755,8 +792,8 @@ where the ABS has not reached the 95\% threshold at the end of the DD PQL additi
 be considered to reduce the risk of re-detection.
 
 
-\section*{Conclusions}
-Please state what you think are the main conclusions that can be realistically drawn from the findings in the paper, taking care not to make claims that cannot be supported.
+%\section*{Conclusions}
+%Please state what you think are the main conclusions that can be realistically drawn from the findings in the paper, taking care not to make claims that cannot be supported.
 
 
 
