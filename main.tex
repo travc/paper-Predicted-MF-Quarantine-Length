@@ -15,12 +15,17 @@
 % \usepackage[round]{natbib}
 % \let\cite\citep
 
+% Can turn off hyperref if it unwanted, but it is generally useful IMO
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+
+%\usepackage{xr} % external refs (for supplemental) (uncomment if not using xr-hyper)
+\externaldocument[S:]{supplemental}
+
 \usepackage{nicefrac}
 \usepackage{url}
 \def\UrlBreaks{\do\/\do-}
 
-% Can turn off hyperref if it unwanted, but it is generally useful IMO
-\usepackage{hyperref}
 
 \begin{document}
 
@@ -142,7 +147,7 @@ reasons \cite{causey_ecology_1943,killeen_eradication_2002}.
 In the case of \textit{An. gambiae} there have been no reports of
 reinvasion, but there are examples of insects that
 recurrently invade areas outside their native range and are recurrently
-extirpated within relatively few genrations.
+extirpated within relatively few generations.
 The Gypsy moth \textit{Lymantria dispar} in Canada
 \cite{gray_hitchhikers_2010} is one such species.
 Arguably, another example is 
@@ -193,8 +198,8 @@ of generations (usually three) to elapse under a thermal unit accumulation (``de
 physiological development model (CITE).
 Degree day based quarantine lengths have been codified in some legal
 regulations, including United States Federal 
-(@TCC make ref:Title 7 Subtitle B Chapter III Part 301.32-10 Treatments)
-and California\cite{3-CA-ADC-3406}.
+(@TCC make ref:Title 7 Subtitle B Chapter III Part 301.32-10 Treatments),
+California\cite{3-CA-ADC-3406}, and Florida\cite{personal communication}.
 However, the procedure prescribed only defines when the end of a
 quarantine period has been reached after the fact.
 For planning and resource allocation, policy makers and managers 
@@ -386,6 +391,10 @@ where each run contained 2500 individual simulations sampling different regions 
 biologically plausible parameter space.
 
 
+The MED-FOES data is summarized here by the number of days from the start date required for
+95\% of the simulations in a run to be eradicated, referred to as the MED-FOES PQL
+(or pe95 within the programs/scripts).
+
 \subsection*{Statistical analysis}
 
 The main results reported here are `normals' in a meteorological sense of term,
@@ -405,7 +414,10 @@ since, as with means, the normal of a function of $X$ is not generally equal to 
 Additionally, by computing the normals of the predicted quarantine durations, 
 we can investigate properties of the distribution of values as shown in 
 figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} 
-and the ``supernorm" supplemental figures.
+and the ``supernorm" supplemental figures 
+S\ref{S:fig:temperature_supernorm}, 
+S\ref{S:fig:ddPQL_supernorm},
+and S\ref{S:fig:medfoesPQL_supernorm}.
 
 %\subsection*{Historical quarantines}
 %
@@ -451,7 +463,9 @@ At all but one site, greater than 75\% of the variance in both degree day and ME
 is accounted for by the mean normal, and the majority exceed 90\%.
 SFO is an exception to this common trend, with the mean normal accounting for only 9.1\% of the variation in 
 degree day based PQL and 28.0\% of the MED-FOES based PQL.
-This is also shown in the respective `supernorm' supplemental figures S?? and S??.
+This is also shown in the respective `supernorm' supplemental figures
+S\ref{S:fig:ddPQL_supernorm},
+and S\ref{S:fig:medfoesPQL_supernorm}.
 
 \begin{table}[htb!]
 \hrule \vspace{0.1cm}
