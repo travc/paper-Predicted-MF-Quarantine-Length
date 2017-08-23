@@ -6,10 +6,10 @@
 \usepackage{gensymb}
 
 %% Default: numerical citations
-\usepackage[numbers]{natbib}
+%\usepackage[numbers]{natbib}
 
 %% Uncomment this lines for superscript citations instead
-% \usepackage[super]{natbib}
+\usepackage[super]{natbib}
 
 %% Uncomment these lines for author-year citations instead
 % \usepackage[round]{natbib}
@@ -18,6 +18,13 @@
 % Can turn off hyperref if it unwanted, but it is generally useful IMO
 \usepackage{xr-hyper}
 \usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
 
 %\usepackage{xr} % external refs (for supplemental) (uncomment if not using xr-hyper)
 \externaldocument[S:]{supplemental}
@@ -48,27 +55,31 @@ Hilo, Hawaii, 96720, USA}
 \begin{abstract} % max 300 words!
 Invasions by pest insects pose a significant threat to agriculture world-wide. In the case of
 \emph{Ceratitis capitata} incursions on the US mainland, where it is not officially established,
-repeated detections are followed by 
-quarantines to eliminate the invading population. However, it is notoriously difficult to set quarantine
-duration because the non-detection of the pest does not necessarily mean the pest
-is extirpated. Most programs determine quarantine lengths 
+repeated detections are followed by quarantines to eliminate the invading population.
+However, it is notoriously difficult to set quarantine
+duration because non-detection does not necessarily mean the pest is extirpated.
+Most programs determine quarantine lengths 
 by calculating the amount of time required for 3 generations to elapse under a thermal unit 
 accumulation development model (``degree day''). 
 A newer approach is to use an Agent-Based Simulation (ABS) to 
-explicitly simulate population demographics and extirpation. Here, the predicted 
-quarantine length for 11 sites in the continental United States were evaluated. Results indicate that 
-strong seasonality in quarantine length, with longer predictions in the second half of the year compared with the first; this pattern was more extreme in the degree day predictions compared 
-with the ABS. Geographically, quarantine lengths increased with latitude, though again this feature was 
-less pronounced under the ABS. Variation in quarantine lengths for particular times and places was 
-significantly higher for degree day versus ABS, and generally peaked in the middle of the year for the
-former and second half of the year for the latter. Analysis of 34 \emph{C. capitata} quarantines
-from 1975 to 2017 in California shows that 
-all but two were declared in the second half of the year, when degree day quarantine lengths are
-longest and have the highest uncertainty.
+explicitly simulate population demographics and extirpation.
+Here, predicted quarantine lengths for 11 sites in the continental United States are evaluated.
+Results indicate a strong seasonality in quarantine length, 
+with longer predictions in the second half of the year compared with the first; 
+this pattern is more extreme in degree day predictions compared with ABS.
+Geographically, quarantine lengths increased with latitude, though again this feature was 
+less pronounced under the ABS.
+Variation in quarantine lengths for particular times and places was 
+dramatically larger for degree day than ABS,
+generally spiking in the middle of the year for degree day 
+and peaking in second half of the year for ABS.
+Analysis of 34 \emph{C. capitata} quarantines from 1975 to 2017 in California shows that 
+all but two were declared in the second half of the year, 
+when degree day quarantine lengths are longest and have the highest uncertainty.
 For this set of hypothetical quarantines, 
-the ABS produced significantly shorter quarantines
-than degree day calculations. 
-Overall, ABS quarantine lengths were more consistent than degree day predictions, avoided unrealistically long values seen in the northermost site studied (San Fransisco), 
+the ABS produced significantly shorter quarantines than degree day calculations. 
+Overall, ABS quarantine lengths were more consistent than degree day predictions,
+avoided unrealistically long values seen in the northermost site studied (San Francisco), 
 and realistically modeled the effects of rare events such as cold snaps.
 %Results presented here should be useful to program managers and planners preparing for 
 %detection and extirpation of \emph{C. capitata} in the mainland US.
@@ -123,33 +134,35 @@ biosecurity, Mediterranean fruit fly, eradication, invasive pest, agriculture
 \section*{Introduction}
 
 Invasions by insects, pathogens and pests increasingly appear to be a 
-defining challenge of the 21\textsuperscript{st} century, facilitated by global connectivity, climatic shifts, and
-other factors \cite{simberloff_impacts_2013} (find paper on number of invasive species).
+defining challenge of the 21\textsuperscript{st} century,
+facilitated by global connectivity, climatic shifts, and
+other factors\cite{simberloff_impacts_2013}
+(@NCM find paper on number of invasive species).
 Invasions by insects that do not become established have a lower public profile
 than those that are ``successful'' from the point of view of the insect.
 However, when the invading species is of environmental, human health, or 
 economic concern there is a greater chance that cases of invasion followed 
 by extirpation would be detected 
-and studied \cite{liebhold_population_2008}.
+and studied\cite{liebhold_population_2008}.
 Eradication of such insects can be desirable and 
-feasible \cite{myers_eradication_2000} depending on several factors.
+feasible\cite{myers_eradication_2000} depending on several factors.
 
 One factor is if the new environment is only marginally or 
 seasonally suitable to the invading insect, facilitating its eradication.
 Another is when the high cost of allowing establishment leads
 to extensive efforts for eradication.
 The invasion of the malaria mosquito species \textit{Anopheles gambiae}
-into Northeastern Brazil in the 1930's \cite{soper_emphanopheles_1943}
+into Northeastern Brazil in the 1930's\cite{soper_emphanopheles_1943}
 is one example of an invasive insect that was successfully eradicated 
 primarily due to the second of these
-reasons \cite{causey_ecology_1943,killeen_eradication_2002}.
+reasons\cite{causey_ecology_1943,killeen_eradication_2002}.
 
 In the case of \textit{An. gambiae} there have been no reports of
 reinvasion, but there are examples of insects that
 recurrently invade areas outside their native range and are recurrently
 extirpated within relatively few generations.
-The Gypsy moth \textit{Lymantria dispar} in Canada
-\cite{gray_hitchhikers_2010} is one such species.
+The Gypsy moth \textit{Lymantria dispar} in Canada\cite{gray_hitchhikers_2010} 
+is one such species.
 Arguably, another example is 
 the screwworm \textit{Cochlyomyia hominivorax} along 
 the current northernmost edge of its range in 
@@ -162,7 +175,7 @@ the Mediterranean fruit fly \textit{Ceratitis capitata} (Wiedemann), aka. ``Medf
 in California.  
 The last four decades have seen a repeated pattern of
 invasion, detection, and response 
-interspersed by periods of no detections \cite{carey_establishment_1991, papadopoulos_trickle_2013}.
+interspersed by periods of no detections\cite{carey_establishment_1991, papadopoulos_trickle_2013}.
 While it has been suggested that this pattern is the result of
 cryptic establishment of Medfly in California, 
 % Though the establishment of these pests is disputed, 
@@ -224,7 +237,7 @@ producing a distribution of possible outcomes.
 
 In this paper, predicted quarantine length (PQL for short) 
 for 11 sites in the continental United States were analyzed
-(figure \ref{fig:sitemap} and table \ref{tab:sites})
+(\autoref{fig:sitemap} and \autoref{tab:sites})
 based on both the standard thermal accumulation degree day method\cite{ECY:ECY1969503514} 
 as well as the MED-FOES ABS\cite{manoukis_computer_2014}. 
 Seasonal variation dominates quarantine duration, 
@@ -411,7 +424,7 @@ While the latter is fairly common practice, it is not mathematically proper
 since, as with means, the normal of a function of $X$ is not generally equal to the function applied to the normal of $X$.
 Additionally, by computing the normals of the predicted quarantine durations, 
 we can investigate properties of the distribution of values as shown in 
-figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary} 
+\autoref{fig:DD_variation_summary} and \autoref{fig:pe95_variation_summary} 
 and the ``supernorm" supplemental figures 
 S\ref{S:fig:temperature_supernorm}, 
 S\ref{S:fig:ddPQL_supernorm},
@@ -445,7 +458,7 @@ and S\ref{S:fig:medfoesPQL_supernorm}.
 \section*{Results}
 
 
-Figure \ref{fig:main_summary} shows 
+\autoref{fig:main_summary} shows 
 the mean of the normal PQL based on 3 generation degree day accumulation 
 and MED-FOES 95\% extirpation
 along with the minimum and maximum of the normals for temperatures.
