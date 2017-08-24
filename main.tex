@@ -1,3 +1,5 @@
+% notes and todo's can be found by searching for ??, @TCC, and @NCM
+
 % For more detailed article preparation guidelines, please see:
 % http://f1000research.com/author-guidelines
 
@@ -177,17 +179,17 @@ The last four decades have seen a repeated pattern of
 invasion, detection, and response 
 interspersed by periods of no detections\cite{carey_establishment_1991, papadopoulos_trickle_2013}.
 While it has been suggested that this pattern is the result of
-cryptic establishment of Medfly in California\cite{carey201730}, 
+cryptic establishment\cite{carey201730}, 
 % Though the establishment of these pests is disputed, 
 %  a pattern of invasion, detection, and response, 
 %  followed by no further detections for a long period, 
 %  has been established over the last four decades. 
-others have argued that Medfly in California is an example of 
+the majority view is
+that Medfly in California is an example of 
 a ``metainvasion'', consisting of multiple sequential or
-overlapping introductions \cite{davies_bioinvasions_1999}. 
-Still other researchers have maintained 
-that Medfly is repeatedly eradicated
-there \cite{haymer_genetic_1997}, or that there are different situations
+overlapping introductions\cite{davies_bioinvasions_1999}
+and repeated eradication\cite{haymer_genetic_1997}.
+Still other researchers point to the possibility of different situations
 in different regions of the state
 \cite{bonizzoni_microsatellite_2001,gasperi_genetic_2002}.
 Medfly is occasionally found in 
@@ -195,9 +197,9 @@ other parts of the mainland US such as Florida\cite{szyniszewska2016analysis},
 and in other countries or areas that are considered 
 free of the pest including Australia, Mexico and Chile\cite{mcinnis2017can}.
 
-The response plan to Medfly in California, and the other ``free'' 
-regions mentioned above, is extensive and costly, 
-including a quarantine when detections exceed an established threshold \cite{gilbert_insect_2013}.
+The response plan to Medfly in California and the other ``free'' 
+regions mentioned above is extensive and costly, 
+including a quarantine when detections exceed an established threshold\cite{gilbert_insect_2013}.
 A practical and important problem is how long to maintain 
 the countermeasures and quarantine after flies are no longer detected.
 Predicting the likely duration of required quarantines would help with
@@ -210,18 +212,25 @@ by calculating the amount of time required for a given number
 of generations (usually three) to elapse under a thermal unit accumulation (``degree day'')
 physiological development model.
 Degree day based quarantine lengths have been codified in some legal
-regulations, including United States Federal 
-(@TCC make ref:Title 7 Subtitle B Chapter III Part 301.32-10 Treatments),
-California\cite{3-CA-ADC-3406}, and Florida\cite{personal communication}.
+regulations, including 
+United States Federal code\cite{US-301.32-10},
+%(Title 7 Subtitle B Chapter III Part 301.32-10 Treatments),
+California\cite{3-CA-ADC-3406}, and Florida.
 However, the procedure prescribed only defines when the end of a
 quarantine period has been reached after the fact.
+
 For planning and resource allocation, policy makers and managers 
 typically attempt to predict the quarantine lengths by using
-normal temperatures for forward projection \cite{??}.
+normal temperatures for forward projection\cite{??}.
 Although it frequently works fairly well,
 this approach is mathematically flawed 
 and also provides no indication as to the variance or uncertainty
 of those predictions.
+Even a more rigiourous treatment of degree day based values from
+historical temperature data can produced highly variable results
+depending on relatively small changes in temperatures or details of
+the model formulation\cite{Roltsch1999}, in addition to neglecting
+important aspects of the biology.
 
 Recently, another approach to determining effective quarantine 
 durations against Medfly via Agent-Based Simulations (ABS)\cite{manoukis_agent-based_2014}
@@ -234,6 +243,11 @@ number of generations to elapse to estimate quarantine duration.
 MED-FOES also allows for the sampling of parameter space
 (temperature dependent mortality for each stage, fecundity, etc.)
 producing a distribution of possible outcomes.
+While an ABS can be arbitarially complex, MED-FOES is parameterized
+in such a way that it can model a `typical' or hypothetical outbreak from only hourly tempertuare data,
+and is therefore similar to degree day methods in its input data requirements.
+It is also possible to vary the initial population to model a specific outbreak, but
+that is not how it is used here.
 
 In this paper, predicted quarantine length (PQL for short) 
 for 11 sites in the continental United States were analyzed
@@ -242,7 +256,7 @@ based on both the standard thermal accumulation degree day method\cite{ECY:ECY19
 as well as the MED-FOES ABS\cite{manoukis_computer_2014}. 
 Seasonal variation dominates quarantine duration, 
 so we aggregated the PQL values for each day of the year 
-(Jan.\ 1, Jan.\ 2, ect.) %@TCC: wait, below we say weekly- harmonize here?
+(Jan.\ 1, Jan.\ 2, ect.) 
 across a large number of years (65 for most locations) to produce normals.
 This approach enables comparison of the standard degree day 
 method to the ABS, but more importantly provides insight 
@@ -265,18 +279,18 @@ and model reliability.
 % \cite{Bonabeau2002Agent}.
 % These models can include arbitrary amounts of complexity, limited
 % only by computational capacity, and are free of limitations imposed by 
-% mathematical tractability \cite{Huston1988New}.
+% mathematical tractability\cite{Huston1988New}.
 % 
 % While the freedom to include any degree of complexity
 % in an ABS comes at a cost
 % \cite{Deangelis1994Individual,Grimm1999Ten,Hales2003Model}, 
 % the pragmatic and paradigmatic benefits of an agent-based approach 
 % can be significant for diverse areas of 
-% biology \cite{Macal2010Tutorial,Railsback2011Agent}, 
+% biology\cite{Macal2010Tutorial,Railsback2011Agent}, 
 % including biological invasions.
 % However, Agent-Based Simulations have infrequently been applied to
-% questions of insect invasions \cite{vinatier2011factors}
-% (but see \cite{crespo2011modeling} for an example).
+% questions of insect invasions\cite{vinatier2011factors}
+% (but see\cite{crespo2011modeling} for an example).
 
 \begin{figure}[ht!]
 \centering
@@ -394,6 +408,8 @@ Each set of runs for a single site over a range of starting dates is referred to
 All runsets were conducted with the same input parameters aside from temperature.
 Initial population numbers were chosen as a ``standard outbreak'' based on seven real 
 outbreaks modeled previously\cite{manoukis_agent-based_2014}.
+The 7 day interval ABS PQL values were upsampled to daily values using linear interpolation
+to allow day-of-year aggregations across years and comparisons with daily degree day based PQLs.
 
 MED-FOES version 0.6.2 was run under OGS/Grid Engine 2011.11 on a CentOS 6.6 HPC cluster.
 The MED-FOES code, configuration files, and helper scripts are provided in the Supplemental Materials.
@@ -750,7 +766,7 @@ compared directly to previous efforts to model climatic suitability of different
 for Medfly, by equating longer PQLs with higher climatic suitability.
 One of the early studies on the subject focused on Medfly found higher climatic suitability in 
 Florida locations (Fort Pierce and Orlando) compared with California 
-sites \cite{messenger_bioclimatic_1954}. 
+sites\cite{messenger_bioclimatic_1954}. 
 Within California, however, those authors found a higher number of suitable months in coastal 
 areas such as Oceanside compared with Riverside and Fresno, roughly paralleling our 
 findings (compare Los Angeles or San Diego with Fresno or Riverside).
@@ -758,7 +774,7 @@ A more recent analysis of climatic suitability likewise concludes that coastal
 S. California is the most favorable area of the state for Medfly, but 
 favorability drops inland in the south due to desert conditions.
 Suitability in central and northern California is limited by cold temperatures and 
-freezes \cite{gutierrez_assessing_2011}. 
+freezes\cite{gutierrez_assessing_2011}. 
 
 
 Seasonal variation within locations revealed WORDS ON SEASONAL HERE
@@ -795,7 +811,7 @@ produced more predictable and shorter quarantine durations for future outbreaks.
 
 %%%%%
 
-%By expanding on previous work \cite{manoukis_agent-based_2014}, this study suggests that an 
+%By expanding on previous work\cite{manoukis_agent-based_2014}, this study suggests that an 
 %improved approach to setting quarantine lengths would 
 %include estimates from the DD method and from the ABS.
 
@@ -843,7 +859,7 @@ data on historical outbreaks. This work was supported by the US Department of Ag
 % (i.e. not Harvard referencing style), and should be consistent between references within
 % a given article.
 
-% Reference management systems such as Zotero provide options for exporting bibliographies as Bib\TeX{} files. Bib\TeX{} is a bibliographic tool that is used with \LaTeX{} to help organize the user's references and create a bibliography. This template contains an example of such a file, \texttt{sample.bib}, which can be replaced with your own. Use the \verb|\cite| command  to create in-text citations, like this \cite{Smith:2012qr} and this \cite{Smith:2013jd}.
+% Reference management systems such as Zotero provide options for exporting bibliographies as Bib\TeX{} files. Bib\TeX{} is a bibliographic tool that is used with \LaTeX{} to help organize the user's references and create a bibliography. This template contains an example of such a file, \texttt{sample.bib}, which can be replaced with your own. Use the \verb|\cite| command  to create in-text citations, like this\cite{Smith:2012qr} and this\cite{Smith:2013jd}.
 
 
 % See this guide for more information on BibTeX:
