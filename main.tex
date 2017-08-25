@@ -303,7 +303,7 @@ and model reliability.
 \caption{\label{tab:sites}Weather station (NOAA ISD) sites used.}
 \centering
 \begin{tabledata}{llllrrrl}
-\header Callsign & Station Name & State & Latitude & Longitude & Elevation & Start year \\
+\header Callsign & Station Name (as shown in data records) & State & Latitude & Longitude & Elevation & Start year \\
 \row KSFO &  SAN FRANCISCO INTERNATIONAL A &  CA &  +37.620 &  -122.365 &  2.4 & 1950 \\
 \row KFAT &  FRESNO YOSEMITE INTERNATIONAL &  CA &  +36.780 &  -119.719 &  101.5 & 1950 \\
 \row KBUR &     BURBANK-GLENDALE-PASA ARPT &  CA &  +34.201 &  -118.358 &  236.2 & 1973 \\
@@ -494,12 +494,12 @@ There is significant variation in PQL across both time and location.
 The temporal variation in PQL is dominated by a yearly cycle, 
 characterized by the normal values shown in \autoref{fig:main_summary}.
 \autoref{tab:variance_captured_by_normal} shows the percentage of variance in 
-quarantine length predictions, captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
-At all but one site, greater than 75\% of the variance in both degree day and ABS based PQL
+quarantine length predictions captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
+At all but one site, greater than 75\% of the variance in both degree day and ABS based PQLs
 is accounted for by the mean normal, and the majority exceed 90\%.
 SFO is an exception to this common trend, with the mean normal accounting for only 9.1\% of the variation in 
 degree day based PQL and 28.0\% of the ABS based PQL.
-This is also shown in the respective `supernorm' supplemental figures
+This is also reflected in supplemental figures
 S\ref{S:fig:ddPQL_supernorm},
 and S\ref{S:fig:medfoesPQL_supernorm}.
 
@@ -511,8 +511,8 @@ DD PQL is the 3 generation single sine degree day based prediction,
 and ABS PQL is the MED-FOES agent-based simulation predictions.}
 \centering
 \begin{tabledata}{lrr}
-\header & \multicolumn{2}{c}{$R^2$} \\
-\header Site & DD PQL & ABS PQL \\
+%\header & \multicolumn{2}{c}{$R^2$} \\
+\header Site & DD PQL $R^2$ & ABS PQL $R^2$\\
 \row SFO &   9.12\% & 28.01\% \\
 \row FAT &  93.93\% & 75.68\% \\
 \row BUR &  90.71\% & 90.88\% \\
@@ -530,7 +530,7 @@ and ABS PQL is the MED-FOES agent-based simulation predictions.}
 
 \subsection*{Seasonal dependence}
 
-Seasonal variation, evidenced by the general shape of the curves shown in figure \ref{fig:main_summary}, 
+Seasonal variation, evidenced by the general shape of the curves shown in \autoref{fig:main_summary}, 
 is doubtless familiar to anyone engaged in Medfly pest management.
 Outbreaks starting in the late summer, autumn, or early winter will extend through relatively cold periods,
 when thermal dependent development will be slow and therefore extend the duration of quarantine required
@@ -545,12 +545,12 @@ The ABS generally produces a smaller overall range of PQLs,
 with longer quarantines than DD PQL for spring and early summer outbreaks,
 and shorter quarantines for late summer through early winter in almost all cases.
 
-A particular feature of interest, shown most dramatically at FAT in figure \ref{fig:main_summary},
+A particular feature of interest, shown most dramatically at FAT in \autoref{fig:main_summary},
 is that ABS PQL often flattens out or even dips for quarantines starting in the late 
 autumn or early winter.  This can be due to relatively rare and brief cold-snaps,
 normally lasting only a few hours, which increase mortality.
 Since DD PQL does not account for mortality, it misses the effect of cold-snaps entirely.
-This cold-snap effect is most clearly seen at more northern and 
+This effect is most clearly seen at more northern and 
 inland sites where cold-snaps are more likely: 
 particularly FAT and RIV, but also BUR, LAX, JAX, and IAH.
 
@@ -569,10 +569,10 @@ and MED-FOES ABS based predictions are in the right pane.
 
 PQL generally shows a positive correlation with latitude\cite{??}.
 Sites are ordered by latitude in the figures and tables.
-As seen in figure \ref{fig:main_summary}, higher latitude sites tend to have longer PQL 
+As seen in \autoref{fig:main_summary}, higher latitude sites tend to have longer PQL 
 as well as larger seasonal swings for both degree day and ABS based predictions.
 
-Figure \ref{fig:latitude_trend} shows the relationship between PQL and latitude.
+\autoref{fig:latitude_trend} shows the relationship between PQL and latitude.
 An ordinary least squares fit to the median PQL at each site shows a significant slope for
 both DD PQL ($F{=}14.08$, $p{=}0.005$) and ABS PQL ($F{=}10.55$, $p{=}0.010$), but
 the degree day based predictions are more sensitive to latitude than the ABS
@@ -586,7 +586,7 @@ large differences in PQLs computed for the same start date
 can exist between even relatively nearby sites.
 For example, the differences in both degree day and ABS PQLs 
 for the three sites in the Los Angeles region (LAX, BUR, RIV) 
-(shown in the supplemental figure \ref{sfig:??})
+(shown in the supplemental \autoref{sfig:??})
 show a strong seasonal component with a spike in July and/or August.
 The difference in DD PQL between LAX and BUR is normally about a month
 (overall median=35 days; overall 25\% \& 75\% quantiles are 28 \& 45 days), 
@@ -598,14 +598,14 @@ with the LAX minus BUR (MEAN?) difference not exceeding 42 days at its maximum.
 
 \subsection*{Variance and uncertainty}
 
-Figures \ref{fig:DD_variation_summary} and \ref{fig:pe95_variation_summary}
+\autoref{fig:DD_variation_summary} and \autoref{fig:pe95_variation_summary}
 report the standard deviation ($\sigma$) of the normal for DD PQL and the MED-FOES ABS PQL 
 respectively.
 These indicate the year to year variability of the PQL for outbreaks starting at a
 given time of the year and can be used to gauge the uncertainty of quarantine 
 length predictions relative to the actual quarantine length which will be required.
 Similar information is represented by the inter-quartile ranges 
-shown in figure \ref{fig:latitude_trend} and the `supernorm' supplemental figures.
+shown in \autoref{fig:latitude_trend} and the `supernorm' supplemental figures.
 Those `supernorm' figures also show that the underlying distributions of PQL 
 values are generally not highly skewed, making $\sigma$ a relatively easy to interpret 
 proxy for uncertainty.
@@ -615,7 +615,7 @@ except for the late summer and early autumn, where variance increases
 due to quarantines extending through the cold season.
 FAT and, to a lesser extent, RIV show this increase more dramatically, presumably due to their more 
 arid/inland climates where both daily and seasonal temperature ranges are larger
-(also see figure \ref{fig:main_summary}).
+(also see \autoref{fig:main_summary}).
 The standard deviation generally decreases with decreasing latitude, together with reduced means.
 The standard deviation in DD PQL for SFO shows a inversion of the seasonal trend 
 other sites exhibit.
@@ -623,7 +623,7 @@ This is due to the colder temperatures leading to extremely long DD PQLs,
 frequently extending across two winter seasons.
 
 The standard deviations of the ABS PQL normals 
-shown in figure \ref{fig:pe95_variation_summary}
+shown in \autoref{fig:pe95_variation_summary}
 are generally about \nicefrac{1}{2} as large as for DD PQL.
 This indicates that MED-FOES PQL not only shows less dramatic seasonal swings, 
 but is also produces more consistent predictions across years.
@@ -645,7 +645,7 @@ All but two of these quarantines were declared in the latter half of the year
 with 68\% ($23/34$) occurring in September through October (when DD PQLs are
 longest). 
 August, the month where uncertainty in DD PQL often spikes 
-(see figure \ref{fig:DD_variation_summary}), 
+(see \autoref{fig:DD_variation_summary}), 
 accounts for 30\% ($7/34$) of historic quarantines.
 
 DD PQLs and ABS PQLs were computed using the start date for each historic
