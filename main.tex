@@ -221,13 +221,13 @@ quarantine period has been reached after the fact.
 
 For planning and resource allocation, policy makers and managers 
 typically attempt to predict the quarantine lengths by using
-normal temperatures for forward projection\cite{??}.
+normal temperatures for forward projection.%@TCC|@NCM: should really have a citation for this!
 Although it frequently works fairly well,
 this approach is mathematically flawed 
 and also provides no indication as to the variance or uncertainty
 of those predictions.
-Even a more rigiourous treatment of degree day based values from
-historical temperature data can produced highly variable results
+Even a more rigorous treatment of degree day based values from
+historical temperature data can still produced highly variable results
 depending on relatively small changes in temperatures or details of
 the model formulation\cite{Roltsch1999}, in addition to neglecting
 important aspects of the biology.
@@ -243,8 +243,8 @@ number of generations to elapse to estimate quarantine duration.
 MED-FOES also allows for the sampling of parameter space
 (temperature dependent mortality for each stage, fecundity, etc.)
 producing a distribution of possible outcomes.
-While an ABS can be arbitarially complex, MED-FOES is parameterized
-in such a way that it can model a `typical' or hypothetical outbreak from only hourly tempertuare data,
+While an ABS can be arbitrarily complex, MED-FOES is parameterized
+in such a way that it can model a `typical' or hypothetical outbreak from only hourly temperature data,
 and is therefore similar to degree day methods in its input data requirements.
 It is also possible to vary the initial population to model a specific outbreak, but
 that is not how it is used here.
@@ -418,7 +418,9 @@ all values for the same calendar day irrespective of year (eg. 20-July) are
 aggregated and summary statistics such as mean, minimum, maximum, and standard deviation 
 are computed for each aggregation.
 \texttt{Temperature functions.ipynb} contains the code used to perform normal calculations, 
-and the code generating these figures is \texttt{Summary Figures.ipynb}.
+and the code generating figures as well as all statistical analysis 
+is \texttt{Summary Figures.ipynb}
+(Jupyter Notebook\cite{PER-GRA:2007}, module and version information documented in the file).
 
 The results reported here are the normals of PQL computed using the full temperature time series
 as opposed to computing PQL from the normal of the temperature timeseries.
@@ -567,9 +569,9 @@ and MED-FOES ABS based predictions are in the right pane.
 }
 \end{figure*}
 
-PQL generally shows a positive correlation with latitude\cite{??}.
-Sites are ordered by latitude in the figures and tables.
-As seen in \autoref{fig:main_summary}, higher latitude sites tend to have longer PQL 
+PQL generally shows a positive correlation with latitude, and 
+sites are ordered by latitude in the figures and tables here.
+As seen in \autoref{fig:main_summary}, higher latitude sites tend to have longer PQLs
 as well as larger seasonal swings for both degree day and ABS based predictions.
 
 \autoref{fig:latitude_trend} shows the relationship between PQL and latitude.
@@ -582,18 +584,19 @@ where the degree day model for Medfly produced PQLs that appear either unrealist
 or are subject to rapid and extreme seasonal variation in the mid year (FAT).
 
 In addition to the variation associated with latitude, 
-large differences in PQLs computed for the same start date 
+large differences in PQLs computed for the same start date
 can exist between even relatively nearby sites.
 For example, the differences in both degree day and ABS PQLs 
 for the three sites in the Los Angeles region (LAX, BUR, RIV) 
-(shown in the supplemental \autoref{sfig:??})
-show a strong seasonal component with a spike in July and/or August.
+(shown in the supplemental figure S\ref{S:fig:PQL_difference_between_sites_LA})
+display a strong seasonal component with a spike in July and/or August.
 The difference in DD PQL between LAX and BUR is normally about a month
 (overall median=35 days; overall 25\% \& 75\% quantiles are 28 \& 45 days), 
 but the median difference of the normal exceeds 75 days in August with some 
 PQL differences up to 142 days.
 Differences in ABS PQLs are more seasonally stable, 
-with the LAX minus BUR (MEAN?) difference not exceeding 42 days at its maximum.
+with the LAX minus BUR difference not exceeding 42 days
+for any start date in the 43 years analyzed here.
 
 
 \subsection*{Variance and uncertainty}
@@ -605,10 +608,11 @@ These indicate the year to year variability of the PQL for outbreaks starting at
 given time of the year and can be used to gauge the uncertainty of quarantine 
 length predictions relative to the actual quarantine length which will be required.
 Similar information is represented by the inter-quartile ranges 
-shown in \autoref{fig:latitude_trend} and the `supernorm' supplemental figures.
-Those `supernorm' figures also show that the underlying distributions of PQL 
-values are generally not highly skewed, making $\sigma$ a relatively easy to interpret 
-proxy for uncertainty.
+shown in \autoref{fig:latitude_trend} and supplemental figures
+S\ref{S:fig:ddPQL_supernorm},
+and S\ref{S:fig:medfoesPQL_supernorm}.
+The distributions of PQL values for a site and day-of-year (aggregating across years) 
+are generally not highly skewed, making $\sigma$ a relatively easy to interpret measure of uncertainty.
 
 Excluding SFO, the mean normal is a good predictor of DD PQL with $\sigma$ values below 20 days
 except for the late summer and early autumn, where variance increases 
@@ -625,7 +629,7 @@ frequently extending across two winter seasons.
 The standard deviations of the ABS PQL normals 
 shown in \autoref{fig:pe95_variation_summary}
 are generally about \nicefrac{1}{2} as large as for DD PQL.
-This indicates that MED-FOES PQL not only shows less dramatic seasonal swings, 
+This indicates that the ABS PQL not only shows less dramatic seasonal swings, 
 but is also produces more consistent predictions across years.
 Values again generally decrease with latitude, but less consistently than DD PQL $\sigma$ of normals.
 Also, unlike with the DD PQL, the results for SFO appear consistent with other sites.
@@ -639,30 +643,31 @@ more aird/inland climate.  RIV shows a significant but more gradual increase.
 
 \subsection*{Historical quarantines}
 
-34 Medfly quarantines in CA dating from 1975 to early 2017 were analyzed (supplemental table ??).
+34 Medfly quarantines in CA dating from 1975 to early 2017 were analyzed
+(supplemental table S\ref{S:tab:historical_quarantines}).
 All but two of these quarantines were declared in the latter half of the year
 (July through December) when DD PQLs are typically relatively long,
-with 68\% ($23/34$) occurring in September through October (when DD PQLs are
-longest). 
+with 68\% ($23/34$) occurring in September through October when DD PQLs are
+longest. 
 August, the month where uncertainty in DD PQL often spikes 
 (see \autoref{fig:DD_variation_summary}), 
 accounts for 30\% ($7/34$) of historic quarantines.
 
-DD PQLs and ABS PQLs were computed using the start date for each historic
-quarantine and the temperature data from the closest site of the 11 analyzed
-here (see supplemental table ??).
+For each historic quarantine start date, the DD PQL and ABS PQL 
+for the closest of the 11 sites analyzed above (see \autoref{fig:sitemap} and \autoref{tab:sites}) 
+to the actual outbreak location was determined
+(see supplemental table S\ref{S:tab:historical_quarantines}).
 For this set of hypothetical quarantines, 
-The ABS produced significantly shorter quarantines
+the ABS produced significantly shorter quarantines
 (mean=169.7 days, $\sigma$=21.8 days)
 than simple 3 generation degree day accumulation
 (mean=234.2 days, $\sigma$=79.2 days)
-(t-statistic=6.01, $p<10^{-5}$).
+(\textit{df}=33, $t{=}6.01$, $p{<}10^{-5}$).
 Additionally, the variance in the difference between quarantine lengths
 using a specific date and the mean of the normal PQL for that day of year
-were smaller for the ABS ($\sigma$=8.2 days)
+was smaller for the ABS ($\sigma$=8.2 days)
 than with degree day ($\sigma$=25.9 days)
-(F-statistic=9.92, $p<10^{-8}$).
-%@TCC: Give df in the above stats?
+(\textit{df}=33, $F{=}9.92$, $p{<}10^{-8}$).
 
 
 % @ TCC Maybe for supplemental...
@@ -719,7 +724,7 @@ Requiring a fixed number (typically 3) generations of degree days to pass is
 a "tried and true" method, but not explicitly an extirpation model.
 It may overestimate required quarantine length through cold weather\cite{??}
 and may underestimate length when growth conditions are very favorable, 
-which somewhat paradoxically leads to quicker extirpation under SIT (CITE?).
+which somewhat paradoxically leads to quicker extirpation under SIT (CITE??).
 %However, the simplicity of degree day and the "has worked so far" nature
 %means it will likely continue to be the regulatory benchmark.
 However, the simplicity of the degree day calculation is a point in its favor, together with 
