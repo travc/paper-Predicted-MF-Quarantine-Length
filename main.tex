@@ -715,7 +715,7 @@ and will hopefully find use as a general guide.
 % overall comparison of DD and ABD PQLs here.
 
 Extirpation models are extremely difficult to test for accuracy given 
-the impracticality of experimental introductions and 
+the impracticality of experimental introductions, and 
 the sparse and idiosyncratic nature of historic outbreaks.
 However, analyzing the timing and locations of historic outbreaks 
 suggests that quarantine lengths would generally be more consistent
@@ -723,7 +723,7 @@ and shorter on average in California if estimated by ABS compared with degree da
 
 Requiring a fixed number (typically 3) generations of degree days to pass is 
 a ``tried and true" method, but not explicitly an extirpation model.
-It may overestimate required quarantine length through cold weather %@TCC|@NCM CITE??
+It may overestimate required quarantine length through cold weather\cite{manoukis_agent-based_2014}
 and may underestimate length when growth conditions are very favorable, 
 which somewhat paradoxically leads to quicker expected extirpation under SIT. %@TCC|@NCM CITE??
 %However, the simplicity of degree day and the "has worked so far" nature
@@ -734,7 +734,7 @@ its record of generally avoiding subsequent detections after quarantine\cite{mci
 ABS results may be used to inform and modulate responses and treatments which are under
 the discretion of managers.
 In situations where DD PQL greatly exceed those from the ABS, it is likely
-that degree day is missing important effects such as cold snaps which may justify
+that degree day is missing important effects, such as cold snaps, which may justify
 shortening quarantine periods.
 On the other hand, in cases where the ABS predicts longer times to extirpation, it
 is plausible that the degree day indicated quarantine is optimistically short, and 
@@ -789,7 +789,7 @@ freezes\cite{gutierrez_assessing_2011}.
 
 
 % variation within location/time
-An important aspect of PQLs from the ABS is variation within particular times of years and locations. 
+An important aspect of ABS PQLs is variation within particular times of years and locations. 
 Rare events like cold snaps can increase mortality in the ABS,
 and thereby lead to shorter PQLs than expected based on historical averages, or DD PQLs.
 The specificity of the ABS is helpful for determining 
@@ -803,7 +803,7 @@ which means that low temperatures can significantly reduce estimates.
 % where the variation is particularly acute (like FAT?)
 % Possibly put a paragraph on variation in PQLs seen in figs 3,4- patterns different for ABS vs DD (This is touched on below with the uncertainty stuff.)
 
-In California, historically quarantines have most frequently occurred at times of year when 
+Historically in California, quarantines have most frequently occurred at times of year when 
 degree day based quarantines are drawn out by cold weather and the MED-FOES ABS model predicts significantly
 shorter durations.
 Furthermore, 30\% of those historic quarantines happened in August where there is a great 
@@ -818,11 +818,13 @@ produced more predictable and shorter quarantine durations for future outbreaks.
 %By expanding on previous work\cite{manoukis_agent-based_2014}, this study suggests that an 
 %improved approach to setting quarantine lengths would 
 %include estimates from the DD method and from the ABS.
-
-The initial quarantine length estimate could be quickly produced based on the distribution of PQL values
-generated using historical temperatures.
+Combination of the two methods analyzed here could leverage the best aspects of both methods for 
+determining optimal quarantine length. 
+The initial quarantine length estimate could be quickly produced via degree-day calculation
+or the ABS
+based on the distribution of PQL values generated using historical temperatures.
 This would generate not just a single ``typical'' value as the current method of projecting
-using historical average/normal temperatures does.
+using historical average/normal temperatures does, but a range of outcomes under development only.
 The median ``most likely'' value may be used for official estimates, while
 the variance and extremes would provide managers and affected parties additional
 information vital for planning.
@@ -848,7 +850,7 @@ be considered to reduce the risk of re-detection.
 
 \subsection*{Author contributions}
 NCM: Devised and wrote the MED-FOES ABS.
-TCC: Wrote the temperature parsing, degree day, and other analysis code.
+TCC: Wrote the temperature parsing, degree day, and other analysis code. Produced figures.
 Authors contributed equally to manuscript.
 %In order to give appropriate credit to each author of an article, the individual
 %contributions of each author to the manuscript should be detailed in this section. We
