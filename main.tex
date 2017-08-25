@@ -405,7 +405,7 @@ The MED-FOES code, configuration files, and helper scripts are provided in the S
 Overall, we created 11 runsets (one for each site), 
 each containing runs starting every 7 days over the input temperature data range for that site,
 where each run contained 2500 individual simulations sampling different regions of 
-biologically plausible parameter space.
+biologically plausible parameter space; a total of over $86{\times}10^6$ simulations.
 
 
 \subsection*{Statistical analysis}
@@ -716,15 +716,16 @@ and will hopefully find use as a general guide.
 
 Extirpation models are extremely difficult to test for accuracy given 
 the impracticality of experimental introductions and 
-the sparse and idiosyncratic nature of historic outbreaks. However, analyzing locations
-of historic outbreaks suggests that quarantine lengths would generally be more consistent
+the sparse and idiosyncratic nature of historic outbreaks.
+However, analyzing the timing and locations of historic outbreaks 
+suggests that quarantine lengths would generally be more consistent
 and shorter on average in California if estimated by ABS compared with degree day. 
 
 Requiring a fixed number (typically 3) generations of degree days to pass is 
-a "tried and true" method, but not explicitly an extirpation model.
-It may overestimate required quarantine length through cold weather\cite{??}
+a ``tried and true" method, but not explicitly an extirpation model.
+It may overestimate required quarantine length through cold weather %@TCC|@NCM CITE??
 and may underestimate length when growth conditions are very favorable, 
-which somewhat paradoxically leads to quicker extirpation under SIT (CITE??).
+which somewhat paradoxically leads to quicker expected extirpation under SIT. %@TCC|@NCM CITE??
 %However, the simplicity of degree day and the "has worked so far" nature
 %means it will likely continue to be the regulatory benchmark.
 However, the simplicity of the degree day calculation is a point in its favor, together with 
@@ -736,16 +737,16 @@ In situations where DD PQL greatly exceed those from the ABS, it is likely
 that degree day is missing important effects such as cold snaps which may justify
 shortening quarantine periods.
 On the other hand, in cases where the ABS predicts longer times to extirpation, it
-is plausible that the degree day indicated quarantine is short, and 
+is plausible that the degree day indicated quarantine is optimistically short, and 
 eradication treatments and SIT releases should be conducted aggressively.
 
 
 A few specific results arising from overall comparisons of different locations are worth highlighting. 
-In general, DD PQL for Medfly 
+In general, DD PQLs for Medfly 
 generated from San Francisco International Airport temperature data
  are almost certainly too long for the entire year.
 The ABS PQLs are flatter and seem more realistic at around 200 days for San
-Fransisco compared with the 400-550 days of DD PQLs. 
+Francisco compared with the 400-550 days of DD PQLs. 
 For several other California locations (typified by Fresno and 
 Riverside) DD PQLs are in close alignment with those from the ABS 
 for the first half of the year 
@@ -757,15 +758,17 @@ The extent of the difference in those Florida locations is smaller in the later 
 but the generality of this pattern suggests that the margin of safety for quarantines as 
 calculated by degree day in those locations may be smaller than expected. 
 
-Other systematic comparisons of (PQLs? development?) include .. (PLUG Davis paper here) 
+% @NCM --
+% Other systematic comparisons of (PQLs? development?) include .. (PLUG Davis paper here) 
 % Are there other papers we should compare with here? I would guess yes...
-
 
 As expected, there is significant variation in PQL depending on the location of the outbreak, 
 with the extremes in our study sites represented by Miami and San Francisco.
 These geographic results could be
-compared directly to previous efforts to model climatic suitability of different parts of the US 
-for Medfly, by equating longer PQLs with higher climatic suitability.
+%compared directly to previous efforts to model climatic suitability of different parts of the US 
+%for Medfly, by equating longer PQLs with higher climatic suitability.
+% @NCM... Actually, it can't.  High suitability normally means high reproduction rate => fast generations => low PQL.  That is the paradox thing I mentioned. --@TCC
+compared to previous efforts to model climatic suitability of different parts of the US.
 One of the early studies on the subject focused on Medfly found higher climatic suitability in 
 Florida locations (Fort Pierce and Orlando) compared with California 
 sites\cite{messenger_bioclimatic_1954}. 
@@ -779,11 +782,10 @@ Suitability in central and northern California is limited by cold temperatures a
 freezes\cite{gutierrez_assessing_2011}. 
 
 
-Seasonal variation within locations revealed WORDS ON SEASONAL HERE
-[
-Anna's 2014 paper; refs she cites "It is well documented in regional studies from several areas of the world that Medfly has a highly seasonal pattern to its population dynamics"...:
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4222914/
-]
+% @NCM... I can't think of anything clever to say here.  It pretty much follows what everyone already knows.  Feel free to add something though  --@TCC
+% Seasonal variation within locations revealed WORDS ON SEASONAL HERE
+% A ref which points to more: Anna's 2014 paper; refs she cites "It is well documented in regional studies from several areas of the world that Medfly has a highly seasonal pattern to its population dynamics"...:
+% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4222914/
 
 
 % variation within location/time
@@ -799,7 +801,7 @@ The ABS, however, also includes mortality for generating PQLs,
 which means that low temperatures can significantly reduce estimates.
 % perhaps name names of locations
 % where the variation is particularly acute (like FAT?)
-% Possibly put a paragraph on variation in PQLs seen in figs 3,4- patterns different for ABS vs DD
+% Possibly put a paragraph on variation in PQLs seen in figs 3,4- patterns different for ABS vs DD (This is touched on below with the uncertainty stuff.)
 
 In California, historically quarantines have most frequently occurred at times of year when 
 degree day based quarantines are drawn out by cold weather and the MED-FOES ABS model predicts significantly
@@ -830,17 +832,27 @@ via the ABS could indicate the likelihood that extirpation has been achieved. If
 95\% extirpation is observed the decision to end quarantine early could be made, or in the case 
 where the ABS has not reached the 95\% threshold at the end of the DD PQL additional measures could 
 be considered to reduce the risk of re-detection.
+% @NCM... What do you think about adding something like...
+%However, the choice of 95\% extirpation as the threshold is somewhat arbitrary and does not 
+%directly represent a probability of a quarantine being successful.  In fact, it is most likely 
+%overly conservative, since that 5\% of persisting simulations are the worst possible combination of
+%plausible parameter values (high reproduction rate, low mortality, ect.)
+%The precise choice of threshold value may be a useful point of adjustment for policymakers.
+
+% @NCM|@TCC... Some line(s) with a final overall conclusion?
 
 
 %\section*{Conclusions}
 %Please state what you think are the main conclusions that can be realistically drawn from the findings in the paper, taking care not to make claims that cannot be supported.
 
 
-
 \subsection*{Author contributions}
-In order to give appropriate credit to each author of an article, the individual
-contributions of each author to the manuscript should be detailed in this section. We
-recommend using author initials and then stating briefly how they contributed.
+NCM: Devised and wrote the MED-FOES ABS.
+TCC: Wrote the temperature parsing, degree day, and other analysis code.
+Authors contributed equally to manuscript.
+%In order to give appropriate credit to each author of an article, the individual
+%contributions of each author to the manuscript should be detailed in this section. We
+%recommend using author initials and then stating briefly how they contributed.
 
 \subsection*{Competing interests}
 None to declare.
