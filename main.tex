@@ -57,15 +57,16 @@ Hilo, Hawaii, 96720, USA}
 \begin{abstract} % max 300 words!
 Invasions by pest insects pose a significant threat to agriculture world-wide. In the case of
 \emph{Ceratitis capitata} incursions on the US mainland, where it is not officially established,
-repeated detections are followed by quarantines to eliminate the invading population.
+repeated detections are followed by quarantines and treatments to eliminate the invading population.
 However, it is notoriously difficult to set quarantine
-duration because non-detection does not necessarily mean the pest is extirpated.
-Most programs determine quarantine lengths 
+duration because non-detection does not necessarily mean the pest is eliminated.
+Most programs extend quarantine lengths past the last fly detection
 by calculating the amount of time required for 3 generations to elapse under a thermal unit 
 accumulation development model (``degree day''). 
 A newer approach is to use an Agent-Based Simulation (ABS) to 
-explicitly simulate population demographics and extirpation.
-Here, predicted quarantine lengths for 11 sites in the continental United States are evaluated.
+explicitly simulate population demographics and elimination.
+Here, predicted quarantine lengths for 11 sites in the continental United States are evaluated
+using both approaches.
 Results indicate a strong seasonality in quarantine length, 
 with longer predictions in the second half of the year compared with the first; 
 this pattern is more extreme in degree day predictions compared with ABS.
@@ -75,16 +76,16 @@ Variation in quarantine lengths for particular times and places was
 dramatically larger for degree day than ABS,
 generally spiking in the middle of the year for degree day 
 and peaking in second half of the year for ABS.
-Analysis of 34 \emph{C. capitata} quarantines from 1975 to 2017 in California shows that 
-all but two were declared in the second half of the year, 
+Analysis of 34 \emph{C. capitata} quarantines from 1975 to 2017 in California shows that, 
+for all but two, the quarantines were started in the second half of the year, 
 when degree day quarantine lengths are longest and have the highest uncertainty.
-For this set of hypothetical quarantines, 
+For set of hypothetical outbreaks based on these historical quarantines,
 the ABS produced significantly shorter quarantines than degree day calculations. 
 Overall, ABS quarantine lengths were more consistent than degree day predictions,
 avoided unrealistically long values seen in the northermost site studied (San Francisco), 
 and realistically modeled the effects of rare events such as cold snaps.
 %Results presented here should be useful to program managers and planners preparing for 
-%detection and extirpation of \emph{C. capitata} in the mainland US.
+%detection and elimination of \emph{C. capitata} in the mainland US.
 \end{abstract}
 
 \section*{Keywords}
@@ -144,9 +145,9 @@ Invasions by insects that do not become established have a lower public profile
 than those that are ``successful'' from the point of view of the insect.
 However, when the invading species is of environmental, human health, or 
 economic concern there is a greater chance that cases of invasion followed 
-by extirpation would be detected 
+by elimination would be detected 
 and studied\cite{liebhold_population_2008}.
-Eradication of such insects can be desirable and 
+Eradicating local populations of such insects can be desirable and 
 feasible\cite{myers_eradication_2000} depending on several factors.
 
 One factor is if the new environment is only marginally or 
@@ -162,7 +163,7 @@ reasons\cite{causey_ecology_1943,killeen_eradication_2002}.
 In the case of \textit{An. gambiae} there have been no reports of
 reinvasion, but there are examples of insects that
 recurrently invade areas outside their native range and are recurrently
-extirpated within relatively few generations.
+eliminated within relatively few generations.
 The Gypsy moth \textit{Lymantria dispar} in Canada\cite{gray_hitchhikers_2010} 
 is one such species.
 Arguably, another example is 
@@ -172,7 +173,7 @@ Panama\cite{robinson_enabling_2009}
 and more recently in Florida\cite{matthews2017news}.
 
 One of the most important instances of repeated invasion 
-and extirpation by an economically important insect pest is that of 
+and elimination by an economically important insect pest is that of 
 the Mediterranean fruit fly \textit{Ceratitis capitata} (Wiedemann), aka. ``Medfly'', 
 in California.  
 The last four decades have seen a repeated pattern of
@@ -237,7 +238,7 @@ durations against Medfly via Agent-Based Simulations (ABS)\cite{manoukis_agent-b
 was introduced. 
 The MED-FOES system simulates a population of individual Medflies 
 under inundative sterile insect technique (SIT) and other control, 
-explicitly modeling extirpation as opposed to the degree day 
+explicitly modeling elimination as opposed to the degree day 
 approach which only determines the time for a specific
 number of generations to elapse to estimate quarantine duration.
 MED-FOES also allows for the sampling of parameter space
@@ -372,8 +373,8 @@ an agent-based simulation explicitly modeling the eradication of a population of
 under inundative sterile male releases (aka: sterile insect technique or SIT) and other interventions
 such as increased trapping and foliar sprays.
 A MED-FOES simulation models a single non-spatial population starting from a given age distribution 
-and tracks the number of individuals through the time the population experiences extirpation when the last 
-fly (Agent) dies.
+and tracks the number of individuals through time until the last 
+fly (Agent) dies and the population is eliminated.
 The simulation is parameterized on the initial population, additional mortality induced by control efforts,
 the effectiveness of SIT, and a large number of biological parameters for which ranges are known from 
 the literature, including temperature-dependent development and mortality.
@@ -384,10 +385,10 @@ Due to the fact that ranges can be estimated for many of the parameters,
 2500 individual MED-FOES simulations were run for each start date at each site 
 evenly sampling different regions of parameter-space via the 
 Latin Hypercube Sampling\cite{10.2307/1403510} procedure.
-This set of simulations, encompassing a range of possible extirpation outcomes, is referred to as a `run'.
+This set of simulations, encompassing a range of possible elimination outcomes, is referred to as a `run'.
 %simulation -> run -> runset is the terminology I've been using
 The number of days from the start date required for
-95\% of the simulations in a run to reach extirpation is 
+95\% of the simulations in a run to be eliminated is 
 taken as a conservative prediction of needed quarantine length and referred to as ABS PQL.
 
 Varying the start date for different simulations was achieved by simply 
@@ -453,7 +454,7 @@ and S\ref{S:fig:medfoesPQL_supernorm}.
 %can vary significantly over a short distance, especially between coastal and more 
 %inland locations.
 %Temperature data from the nearest site and the historic quarantine start date was used to 
-%compute the 3 generation degree-day duration along with MED-FOES 95\% extirpation.
+%compute the 3 generation degree-day duration along with MED-FOES 95\% elimination.
 %PQLs were also computed using the day-of-year of the historic quarantines 
 %and the mean of the normal PQL values for the nearest site.
 %Values are reported in the supplemental table ??.
@@ -481,13 +482,13 @@ based on 3 generations of single-sine degree day accumulation.}
 \centering
 \includegraphics{figs/fig_pe95_variation.pdf}
 \caption{\label{fig:pe95_variation_summary}Variation in quarantine length prediction 
-based on 95\% of MED-FOES agent-based simulations showing extirpation.}
+based on 95\% of MED-FOES agent-based simulations showing elimination.}
 \end{figure*}
 
 
 \autoref{fig:main_summary} shows 
 the mean of the normal PQL based on 3 generation degree day accumulation 
-and MED-FOES 95\% extirpation
+and MED-FOES 95\% elimination
 along with the minimum and maximum of the normals for temperatures.
 \autoref{fig:DD_variation_summary} and \autoref{fig:pe95_variation_summary} show the 
 standard deviations ($\sigma$) of the normals for the degree day and ABS based PQL.
@@ -714,8 +715,8 @@ and will hopefully find use as a general guide.
 
 % overall comparison of DD and ABD PQLs here.
 
-Extirpation models are extremely difficult to test for accuracy given 
-the impracticality of experimental introductions, and 
+Eradication models are extremely difficult to test for accuracy given 
+the impracticality of experimental introductions and 
 the sparse and idiosyncratic nature of historic outbreaks.
 However, analyzing the timing and locations of historic outbreaks 
 suggests that quarantine lengths would generally be more consistent
@@ -725,18 +726,19 @@ Requiring a fixed number (typically 3) generations of degree days to pass is
 a ``tried and true" method, but not explicitly an extirpation model.
 It may overestimate required quarantine length through cold weather\cite{manoukis_agent-based_2014}
 and may underestimate length when growth conditions are very favorable, 
-which somewhat paradoxically leads to quicker expected extirpation under SIT. %@TCC|@NCM CITE??
+which somewhat paradoxically leads to quicker expected elimination under SIT. %@TCC|@NCM CITE??
 %However, the simplicity of degree day and the "has worked so far" nature
 %means it will likely continue to be the regulatory benchmark.
 However, the simplicity of the degree day calculation is a point in its favor, together with 
 its record of generally avoiding subsequent detections after quarantine\cite{mcinnis2017can}.
 
-ABS results may be used to inform and modulate responses and treatments which are under
-the discretion of managers.
+ABS results may be used to inform and modulate responses and treatments such as
+delimination trapping, fruit sampling, and eradication measures which are under
+the some discretion of managers.
 In situations where DD PQL greatly exceed those from the ABS, it is likely
 that degree day is missing important effects, such as cold snaps, which may justify
 shortening quarantine periods.
-On the other hand, in cases where the ABS predicts longer times to extirpation, it
+On the other hand, in cases where the ABS predicts longer times to elimination, it
 is plausible that the degree day indicated quarantine is optimistically short, and 
 eradication treatments and SIT releases should be conducted aggressively.
 
@@ -830,12 +832,13 @@ the variance and extremes would provide managers and affected parties additional
 information vital for planning.
 
 Once the eradication program is underway, weekly simulations
-via the ABS could indicate the likelihood that extirpation has been achieved. If the threshold 
-95\% extirpation is observed the decision to end quarantine early could be made, or in the case 
-where the ABS has not reached the 95\% threshold at the end of the DD PQL additional measures could 
-be considered to reduce the risk of re-detection.
+via the ABS could indicate the likelihood that the pest has been succesfully eliminated.
+If a threshold of 95\% of simulations show elimination, 
+the decision to end quarantine early could be made, 
+or in the case where the ABS has not reached the 95\% threshold at the end of the DD PQL 
+additional measures could be considered to reduce the risk of re-detection.
 % @NCM... What do you think about adding something like...
-%However, the choice of 95\% extirpation as the threshold is somewhat arbitrary and does not 
+%However, the choice of 95\% as the threshold is somewhat arbitrary and does not 
 %directly represent a probability of a quarantine being successful.  In fact, it is most likely 
 %overly conservative, since that 5\% of persisting simulations are the worst possible combination of
 %plausible parameter values (high reproduction rate, low mortality, ect.)
@@ -864,7 +867,7 @@ This research was funded by USDA-ARS, project number 2040-22430-025-00D and by t
 Research Associate program (TCC).
 
 \subsection*{Acknowledgements}
-We thank XX and YY for comments on an early draft of this paper, and N. Mullaly (USDA-APHIS) for 
+We thank J. Hendrichs and YY for comments on an early draft of this paper, and N. Mullaly (USDA-APHIS) for 
 data on historical outbreaks. This work was supported by the US Department of Agriculture, Agricultural Research Service. Opinions, findings, conclusions or recommendations expressed in this publication are those of the authors and do not necessarily reflect the views of the USDA. USDA is an equal opportunity provider and employer.
 
 {\small\bibliographystyle{unsrtnat}
