@@ -294,7 +294,7 @@ and model reliability.
 % questions of insect invasions\cite{vinatier2011factors}
 % (but see\cite{crespo2011modeling} for an example).
 
-\begin{figure}[ht!]
+\begin{figure}[htb!]
 \centering
 \includegraphics{figs/sitemap.pdf}
 \caption{\label{fig:sitemap}Locations of sites analyzed.}
@@ -332,9 +332,10 @@ The airport sites shown in \autoref{fig:sitemap}
 were chosen for their biological relevance and 
 availability of high quality hourly data over a long time frame.
 
-Sites are referred to here by the last three letters of the callsign shown in table \ref{tab:sites}.
+Sites are referred to here by the last three letters of the callsign shown in 
+\autoref{tab:sites}.
 For 8 sites (SFO, FAT, LAX, RIV, SAN, JAX, TPA, and MIA), temperature data starting on 1950-01-01 was used.
-The 3 other sites contained large ($>$ 14 days) gaps or other problems in the early years of their data,
+The 3 other sites contained large (${>}14$ days) gaps or other problems in the early years of their data,
 so data starting on 1970-01-01 for IAH and 1973-01-01 for BUR and MCO was used.
 For all sites, temperature data from the start date through 2017-05-15 was used
 to generate PQLs for dates ranging from the start date to 2016-01-01.
@@ -376,13 +377,16 @@ such as increased trapping and foliar sprays.
 A MED-FOES simulation models a single non-spatial population starting from a given age distribution 
 and tracks the number of individuals through time until the last 
 fly (Agent) dies and the population is eliminated.
-The simulation is parameterized on the initial population, additional mortality induced by control efforts,
-the effectiveness of SIT, and a large number of biological parameters for which ranges are known from 
-the literature, including temperature-dependent development and mortality.
-The simulations were performed using the same hourly timeseries of temperature values 
+In addition to hourly temperatures, simulation parameters include: 
+the initial population, 
+additional mortality induced by control efforts,
+the effectiveness of SIT, 
+and a large number of biological parameters for which ranges are known from 
+the literature including temperature-dependent development and mortality.
+The simulations were performed using the same hourly time series of temperature values 
 used for degree-day calculations.
 
-Due to the fact that ranges can be estimated for many of the parameters,
+Due to the fact that many of the parameters are only know to within a range,
 2500 individual MED-FOES simulations were run for each start date at each site 
 evenly sampling different regions of parameter-space via the 
 Latin Hypercube Sampling\cite{10.2307/1403510} procedure.
@@ -467,7 +471,8 @@ and S\ref{S:fig:medfoesPQL_supernorm}.
 \begin{figure*}[htp!] % could add 'p' placement to allow it to be on its own page
 \centering
 \includegraphics{figs/fig_main.pdf}
-\caption{\label{fig:main_summary}Summary of normal quarantine length predictions for each site.
+\caption{\label{fig:main_summary}Summary of normal predicted quarantine length 
+for each site and start date (last fly detection).
 Year range of input temperature data used is inclusive.
 All panels have identical limits except SFO quarantine.}
 \end{figure*}
@@ -475,14 +480,16 @@ All panels have identical limits except SFO quarantine.}
 \begin{figure*}[ht!]
 \centering
 \includegraphics{figs/fig_BMDD_variation.pdf}
-\caption{\label{fig:DD_variation_summary}Variation in quarantine length prediction 
+\caption{\label{fig:DD_variation_summary}Variation in predicted quarantine length
+for each site and start date
 based on 3 generations of single-sine degree day accumulation.}
 \end{figure*}
 
 \begin{figure*}[ht!]
 \centering
 \includegraphics{figs/fig_pe95_variation.pdf}
-\caption{\label{fig:pe95_variation_summary}Variation in quarantine length prediction 
+\caption{\label{fig:pe95_variation_summary}Variation in predicted quarantine length 
+for each site and start date
 based on 95\% of MED-FOES agent-based simulations showing elimination.}
 \end{figure*}
 
@@ -607,8 +614,8 @@ for any start date in the 43 years analyzed here.
 report the standard deviation ($\sigma$) of the normal for DD PQL and the MED-FOES ABS PQL 
 respectively.
 These indicate the year to year variability of the PQL for outbreaks starting at a
-given time of the year and can be used to gauge the uncertainty of quarantine 
-length predictions relative to the actual quarantine length which will be required.
+given time of the year and can be used to gauge the uncertainty of predictions based on 
+past PQLs relative to the actual quarantine length which will be required.
 Similar information is represented by the inter-quartile ranges 
 shown in \autoref{fig:latitude_trend} and supplemental figures
 S\ref{S:fig:ddPQL_supernorm},
@@ -647,7 +654,7 @@ more aird/inland climate.  RIV shows a significant but more gradual increase.
 
 34 Medfly quarantines in CA dating from 1975 to early 2017 were analyzed
 (supplemental table S\ref{S:tab:historical_quarantines}).
-All but two of these quarantines were declared in the latter half of the year
+The start of all but two of these quarantines was in the latter half of the year
 (July through December) when DD PQLs are typically relatively long,
 with 68\% ($23/34$) occurring in September through October when DD PQLs are
 longest. 
@@ -707,7 +714,9 @@ The principal contributions of this work can be broken down into three categorie
 2) variation in average PQLs across time of year and space, and
 3) variation in PQLs within a time of year and location.
 Consideration of all three of these by program managers, planners and other decision makers 
-is likely to improve quarantines by informing resource allocation ahead of outbreaks, reducing 
+is likely to
+improve management of Medfly outbreaks %@NCM: is this OK?
+by informing resource allocation ahead of outbreaks, reducing 
 quarantine costs in some cases, and reducing risk from premature quarantine suspension in others. 
 The results presented cover most of the latitudinal range 
 of Medfly suitability within the United States 
@@ -727,11 +736,13 @@ Requiring a fixed number (typically 3) generations of degree days to pass is
 a ``tried and true" method, but not explicitly an extirpation model.
 It may overestimate required quarantine length through cold weather\cite{manoukis_agent-based_2014}
 and may underestimate length when growth conditions are very favorable, 
-which somewhat paradoxically leads to quicker expected elimination under SIT. %@TCC|@NCM CITE??
+which somewhat paradoxically leads to shorter degree day based quarantine periods after the 
+last fly detection since generation times are shorter. %@TCC|@NCM CITE??
 %However, the simplicity of degree day and the "has worked so far" nature
 %means it will likely continue to be the regulatory benchmark.
 However, the simplicity of the degree day calculation is a point in its favor, together with 
-its record of generally avoiding subsequent detections after quarantine\cite{mcinnis2017can}.
+its record of generally avoiding subsequent detections after
+eradication measures and quarantine establishment\cite{mcinnis2017can}.
 
 ABS results may be used to inform and modulate responses and treatments such as
 delimination trapping, fruit sampling, and eradication measures which are under
@@ -741,7 +752,8 @@ that degree day is missing important effects, such as cold snaps, which may just
 shortening quarantine periods.
 On the other hand, in cases where the ABS predicts longer times to elimination, it
 is plausible that the degree day indicated quarantine is optimistically short, and 
-eradication treatments and SIT releases should be conducted aggressively.
+eradication treatments and SIT releases should be conducted even more aggressively than
+normal to ensure eradication is achieved within the degree day based period. %@NCM check this sentence please
 
 
 A few specific results arising from overall comparisons of different locations are worth highlighting. 
@@ -827,13 +839,14 @@ The initial quarantine length estimate could be quickly produced via degree-day 
 or the ABS
 based on the distribution of PQL values generated using historical temperatures.
 This would generate not just a single ``typical'' value as the current method of projecting
-using historical average/normal temperatures does, but a range of outcomes under development only.
+using historical average/normal temperatures does, 
+but a range of outcomes.
 The median ``most likely'' value may be used for official estimates, while
 the variance and extremes would provide managers and affected parties additional
 information vital for planning.
 
-Once the eradication program is underway, weekly simulations
-via the ABS could indicate the likelihood that the pest has been succesfully eliminated.
+Once the three generation period has started after the last fly find, weekly ABS simulations
+could indicate the likelihood that the pest has been successfully eliminated.
 If a threshold of 95\% of simulations show elimination, 
 the decision to end quarantine early could be made, 
 or in the case where the ABS has not reached the 95\% threshold at the end of the DD PQL 
