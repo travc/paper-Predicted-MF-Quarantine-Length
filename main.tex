@@ -58,7 +58,7 @@ Hilo, Hawaii, 96720, USA}
 Invasions by pest insects pose a significant threat to agriculture world-wide. In the case of
 \emph{Ceratitis capitata} incursions on the US mainland, where it is not officially established,
 repeated detections are followed by quarantines and treatments to eliminate the invading population.
-However, it is notoriously difficult to set quarantine
+However, it is notoriously difficult to accurately set quarantine
 duration because non-detection does not necessarily mean the pest is eliminated.
 Most programs extend quarantine lengths past the last fly detection
 by calculating the amount of time required for 3 generations to elapse under a thermal unit 
@@ -83,7 +83,7 @@ For set of hypothetical outbreaks based on these historical quarantines,
 the ABS produced significantly shorter quarantines than degree day calculations. 
 Overall, ABS quarantine lengths were more consistent than degree day predictions,
 avoided unrealistically long values seen in the northermost site studied (San Francisco), 
-and realistically modeled the effects of rare events such as cold snaps.
+and captured effects of rare events such as cold snaps.
 %Results presented here should be useful to program managers and planners preparing for 
 %detection and elimination of \emph{C. capitata} in the mainland US.
 \end{abstract}
@@ -95,44 +95,6 @@ biosecurity, Mediterranean fruit fly, eradication, invasive pest, agriculture
 
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%TO REMOVE:
-%
-%Take-homes:
-%\begin{enumerate}
-%\item There is significant variation in predicted quarantine length 
-%at different times and locations.
-%  \begin{enumerate}
-%  \item Captured by normals
-%  \item Climate
-%  \end{enumerate}
-%\item Variation in prediction within time / location (across years) 
-%is important.
-%  \begin{enumerate}
-%  \item Captured by day-of-year (between-year) variation
-%  \item Informs reliability of prediction
-%  \item Influenced by rare events (eg. cold snaps)
-%  \item Prediction based on normal temps vs normal 
-%  of predictions based on measured temps
-%  \end{enumerate}
-%\item DD vs ABS comparison
-%  \begin{enumerate}
-%  \item ABS is better behaved
-%    \begin{enumerate}
-%    \item Seasonal swings less dramatic; 
-%    Much less discontinuity at beginning of autumn 
-%    \item Smaller overall range
-%    \item Captures common-sense effects missed by DD: 
-%    eg. extreme cold kills
-%    \end{enumerate}
-%  \item Large disagreement between DD and ABS may indicate 
-%  DD prediction is unreliable/broken
-%  \item Variance in predictions should inform management and planning.
-%  ABS variance is easier to interpret (KFAT being a dramatic example).
-%  \end{enumerate}
-%\end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Introduction}
 
@@ -143,14 +105,15 @@ other factors\cite{simberloff_impacts_2013,Pimentel2007}, with a particularly
 severe impact on agriculture\cite{paini2016global}.
 Invasions by insects that do not become established have a lower public profile
 than those that are ``successful'' from the point of view of the insect.
-However, when the invading species is of environmental, human health, or 
-economic concern there is a greater chance that cases of invasion followed 
-by elimination would be detected 
-and studied\cite{liebhold_population_2008}.
+However, there is a greater chance that cases of invasion followed by elimination
+will be detected and studied 
+when the invading species is of environmental, human health, or 
+economic concern\cite{liebhold_population_2008}.
 Eradicating local populations of such insects can be desirable and 
 feasible\cite{myers_eradication_2000} depending on several factors.
 
-One factor is if the new environment is only marginally or 
+One factor determining the feasibility of elimination
+is if the new environment is only marginally or 
 seasonally suitable to the invading insect, facilitating its eradication.
 Another is when the high cost of allowing establishment leads
 to extensive efforts for eradication.
@@ -174,7 +137,7 @@ and more recently in Florida\cite{matthews2017news}.
 
 One of the most important instances of repeated invasion 
 and elimination by an economically important insect pest is that of 
-the Mediterranean fruit fly \textit{Ceratitis capitata} (Wiedemann), aka. ``Medfly'', 
+the Mediterranean fruit fly \textit{Ceratitis capitata} (Wiedemann) (Medfly) 
 in California.  
 The last four decades have seen a repeated pattern of
 invasion, detection, and response 
@@ -225,7 +188,7 @@ quarantine period has been reached after the fact.
 
 For planning and resource allocation, policy makers and managers 
 typically attempt to predict the quarantine lengths by using
-normal temperatures for forward projection.  %@TCC|@NCM: citation for this?
+normal temperatures for forward projection. 
 Although it frequently works fairly well,
 this approach is mathematically flawed 
 and also provides no indication as to the variance or uncertainty
@@ -240,7 +203,7 @@ Recently, another approach to determining effective quarantine
 durations against Medfly via Agent-Based Simulations (ABS)\cite{manoukis_agent-based_2014}
 was introduced. 
 The MED-FOES system simulates a population of individual Medflies 
-under inundative sterile insect technique (SIT) and other control, 
+under inundative sterile insect technique (SIT) and other controls, 
 explicitly modeling elimination as opposed to the degree day 
 approach which only determines the time for a specific
 number of generations to elapse to estimate quarantine duration.
@@ -250,10 +213,9 @@ producing a distribution of possible outcomes.
 While an ABS can be arbitrarily complex, MED-FOES is parameterized
 in such a way that it can model a `typical' or hypothetical outbreak from only hourly temperature data,
 and is therefore similar to degree day methods in its input data requirements.
-It is also possible to vary the initial population to model a specific outbreak, but
-that is not how it is used here.
+It is also possible to vary the initial population to model a specific outbreak.
 
-In this paper, predicted quarantine length (PQL for short) 
+In this paper, predicted quarantine length (PQL) 
 for 11 sites in the continental United States were analyzed
 (\autoref{fig:sitemap} and \autoref{tab:sites})
 based on both the standard thermal accumulation degree day method\cite{ECY:ECY1969503514} 
@@ -267,34 +229,6 @@ method to the ABS, but more importantly provides insight
 into seasonal and spatial variations, prediction uncertainties, 
 and model reliability.
 
-
-% @TCC -- Not sure we want to spend so much time on describing ABS
-% 
-% Agent-Based Simulations (ABS) 
-% (also called ``Individual-Based'' or ``Multi-Agent''), 
-% which can be defined as models where
-% individuals are described as unique and autonomous, and where they usually
-% interact with each other and their environment on a local level
-% \cite{Railsback2011Agent}.
-% Such simulations describe a system of interest 
-% ``from the bottom up'': by implementing its constituent particles and
-% then observing the system behaviors and dynamics that result from those
-% particles interacting autonomously with their environment and often each other
-% \cite{Bonabeau2002Agent}.
-% These models can include arbitrary amounts of complexity, limited
-% only by computational capacity, and are free of limitations imposed by 
-% mathematical tractability\cite{Huston1988New}.
-% 
-% While the freedom to include any degree of complexity
-% in an ABS comes at a cost
-% \cite{Deangelis1994Individual,Grimm1999Ten,Hales2003Model}, 
-% the pragmatic and paradigmatic benefits of an agent-based approach 
-% can be significant for diverse areas of 
-% biology\cite{Macal2010Tutorial,Railsback2011Agent}, 
-% including biological invasions.
-% However, Agent-Based Simulations have infrequently been applied to
-% questions of insect invasions\cite{vinatier2011factors}
-% (but see\cite{crespo2011modeling} for an example).
 
 \begin{figure}[htb!]
 \centering
@@ -323,9 +257,7 @@ and model reliability.
 \end{table*}
 
 
-
 \section*{Methods}
-% Methods should include a brief discussion of allowances made (if any) for controlling bias or unwanted sources of variability, and the limitations of the datasets.
 
 \subsection*{Sites and Temperature Data}
 Hourly air temperature data for 11 sites was downloaded from 
@@ -344,7 +276,7 @@ to generate PQLs for dates ranging from the start date to 2016-01-01.
 
 Data was fetched and parsed using the \texttt{Fetching and parsing ISH.ipynb} program.
 Records for the same station callsign were merged, since identification, format, 
-and precise location of stations has changed over the years.
+and precise location of stations has changed over time.
 The data was then cleaned using the 
 \texttt{Cleaning temperatures.ipynb} program by 
 removing outliers, 
@@ -363,7 +295,8 @@ and 345.56 degree-days Celsius (DDc; 622 DDf) per generation
 following the standard set by California Department of Food and Agriculture
 regulation 3406(b)\cite{CDFA_Medfly,3-CA-ADC-3406}.
 %single-triangle\cite{10.2307/1933072}
-Since we have hourly temperature data, we also calculated degree-days by simple summation
+Since hourly temperature data is available, 
+we also calculated degree-days by simple summation
 for comparison\cite{Roltsch1999}.
 For each date, the number of days required for 3 generations of degree-day 
 based life cycles was computed.
@@ -374,7 +307,7 @@ These calculations are implemented in \texttt{Temperature functions.ipynb} in th
 
 MED-FOES\cite{manoukis_computer_2014,manoukis_agent-based_2014} is 
 an agent-based simulation explicitly modeling the eradication of a population of Medflies 
-under inundative sterile male releases (aka: sterile insect technique or SIT) and other interventions
+under inundative sterile male releases (sterile insect technique or SIT) and other interventions
 such as increased trapping and foliar sprays.
 A MED-FOES simulation models a single non-spatial population starting from a given age distribution 
 and tracks the number of individuals through time until the last 
@@ -408,17 +341,19 @@ outbreaks modeled previously\cite{manoukis_agent-based_2014}.
 The 7 day interval ABS PQL values were upsampled to daily values using linear interpolation
 to allow day-of-year aggregations across years and comparisons with daily degree day based PQLs.
 
-MED-FOES version 0.6.2 was run under OGS/Grid Engine 2011.11 on a CentOS 6.6 HPC cluster.
+MED-FOES version 0.6.2 was run under
+Open Grid Scheduler/Grid Engine 2011.11 on a CentOS 6.6 HPC cluster.
 The MED-FOES code, configuration files, and helper scripts are provided in the Supplemental Materials.
 Overall, we created 11 runsets (one for each site), 
 each containing runs starting every 7 days over the input temperature data range for that site,
 where each run contained 2500 individual simulations sampling different regions of 
-biologically plausible parameter space; a total of over $86{\times}10^6$ simulations.
+biologically plausible parameter space; 
+a total of approximately $86{\times}10^6$ simulations.
 
 
 \subsection*{Statistical analysis}
 
-The main results reported here are `normals' in a meteorological sense of term,
+The main results reported here are `normals' in a meteorological sense of the term,
 but without the typical running mean smoothing which would complicate
 interpretation of the results.
 For a variable of interest (eg.\@ temperature or PQL), 
@@ -507,7 +442,7 @@ There is significant variation in PQL across both time and location.
 The temporal variation in PQL is dominated by a yearly cycle, 
 characterized by the normal values shown in \autoref{fig:main_summary}.
 \autoref{tab:variance_captured_by_normal} shows the percentage of variance in 
-quarantine length predictions captured by the mean of the normal yearly cycle (aka. $R^2$) for each site.
+quarantine length predictions captured by the mean of the normal yearly cycle ($R^2$) for each site.
 At all but one site, greater than 75\% of the variance in both degree day and ABS based PQLs
 is accounted for by the mean normal, and the majority exceed 90\%.
 SFO is an exception to this common trend, with the mean normal accounting for only 9.1\% of the variation in 
@@ -650,11 +585,11 @@ in ABS PQLs starting in July and extending through November,
 while that increase for all other sites starts in July or August 
 but extends to January or February.
 Additionally, results for FAT show a sharp increase in uncertainty starting in September, fitting with the 
-more aird/inland climate.  RIV shows a significant but more gradual increase.
+more arid/inland climate.  RIV shows a significant but more gradual increase.
 
 \subsection*{Historical quarantines}
 
-34 Medfly quarantines in CA dating from 1975 to early 2017 were analyzed
+Thirty-four Medfly quarantines in CA dating from 1975 to early 2017 were analyzed
 (supplemental table S\ref{S:tab:historical_quarantines}).
 The start of all but two of these quarantines was in the latter half of the year
 (July through December) when DD PQLs are typically relatively long,
@@ -768,7 +703,7 @@ For several other California locations (typified by Fresno and
 Riverside) DD PQLs are in close alignment with those from the ABS 
 for the first half of the year 
 but go significantly longer in the cooler months. 
-For three of four Florida locations analyzed, 
+For three of the four Florida locations analyzed, 
 DD PQLs are significantly shorter than the ABS results
  (Miami, Tampa, and Orlando).
 The extent of the difference in those Florida locations is smaller in the later months of the year,
@@ -869,7 +804,7 @@ additional measures could be considered to reduce the risk of re-detection.
 
 \subsection*{Author contributions}
 NCM: Devised and wrote the MED-FOES ABS.
-TCC: Wrote the temperature parsing, degree day, and other analysis code. Produced figures.
+TCC: Produced figures and wrote the temperature parsing, degree day, and analysis code.
 Authors contributed equally to manuscript.
 %In order to give appropriate credit to each author of an article, the individual
 %contributions of each author to the manuscript should be detailed in this section. We
@@ -883,8 +818,10 @@ This research was funded by USDA-ARS, project number 2040-22430-025-00D and by t
 Research Associate program (TCC).
 
 \subsection*{Acknowledgements}
-We thank J. Hendrichs and YY for comments on an early draft of this paper, and N. Mullaly (USDA-APHIS) for 
-data on historical outbreaks. This work was supported by the US Department of Agriculture, Agricultural Research Service. Opinions, findings, conclusions or recommendations expressed in this publication are those of the authors and do not necessarily reflect the views of the USDA. USDA is an equal opportunity provider and employer.
+We thank J. Hendrichs, S. Gieb, S. Sim, and T. Fezza 
+for comments on an early draft of this paper, 
+and N. Mullaly (USDA-APHIS) for data on historical outbreaks. 
+This work was supported by the US Department of Agriculture, Agricultural Research Service. Opinions, findings, conclusions or recommendations expressed in this publication are those of the authors and do not necessarily reflect the views of the USDA. USDA is an equal opportunity provider and employer.
 
 {\small\bibliographystyle{unsrtnat}
 \bibliography{main}}
