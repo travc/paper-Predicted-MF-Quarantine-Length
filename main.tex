@@ -58,8 +58,8 @@ Hilo, Hawaii, 96720, USA}
 Invasions by pest insects pose a significant threat to agriculture world-wide. In the case of
 \emph{Ceratitis capitata} incursions on the US mainland, where it is not officially established,
 repeated detections are followed by quarantines and treatments to eliminate the invading population.
-However, it is notoriously difficult to accurately set quarantine
-duration because non-detection does not necessarily mean the pest is eliminated.
+However, it is difficult to accurately set quarantine
+duration because non-detection may not mean the pest is eliminated.
 Most programs extend quarantine lengths past the last fly detection
 by calculating the amount of time required for 3 generations to elapse under a thermal unit 
 accumulation development model (``degree day''). 
@@ -70,19 +70,19 @@ using both approaches.
 Results indicate a strong seasonality in quarantine length, 
 with longer predictions in the second half of the year compared with the first; 
 this pattern is more extreme in degree day predictions compared with ABS.
-Geographically, quarantine lengths increased with latitude, though again this feature was 
+Geographically, quarantine lengths increased with latitude, though this was 
 less pronounced under the ABS.
 Variation in quarantine lengths for particular times and places was 
 dramatically larger for degree day than ABS,
 generally spiking in the middle of the year for degree day 
 and peaking in second half of the year for ABS.
 Analysis of 34 \emph{C. capitata} quarantines from 1975 to 2017 in California shows that, 
-for all but two, the quarantines were started in the second half of the year, 
+for all but two, quarantines were started in the second half of the year 
 when degree day quarantine lengths are longest and have the highest uncertainty.
-For set of hypothetical outbreaks based on these historical quarantines,
+For a set of hypothetical outbreaks based on these historical quarantines,
 the ABS produced significantly shorter quarantines than degree day calculations. 
 Overall, ABS quarantine lengths were more consistent than degree day predictions,
-avoided unrealistically long values seen in the northermost site studied (San Francisco), 
+avoided unrealistically long values, 
 and captured effects of rare events such as cold snaps.
 %Results presented here should be useful to program managers and planners preparing for 
 %detection and elimination of \emph{C. capitata} in the mainland US.
@@ -174,7 +174,7 @@ management decision-making and planning,
 including potential cost savings by having sufficient but not excessive
 resources available.
 
-Currently most programs extend quarantine periods past the last fly is found
+Currently most programs extend quarantine periods past when the last fly is found
 by calculating the amount of time required for a given number 
 of generations (usually three) to elapse under a thermal unit accumulation (``degree day'')
 physiological development model.
@@ -293,9 +293,9 @@ Degree-days were computed by the single-sine method\cite{ECY:ECY1969503514}
 using a base development temperature of 12.39\degree C (53.3\degree F) 
 and 345.56 degree-days Celsius (DDc; 622 DDf) per generation 
 following the standard set by California Department of Food and Agriculture
-regulation 3406(b)\cite{CDFA_Medfly,3-CA-ADC-3406}.
+regulation 3406(b)\cite{3-CA-ADC-3406,CDFA_Medfly}.
 %single-triangle\cite{10.2307/1933072}
-Since hourly temperature data is available, 
+Since hourly temperature data are available, 
 we also calculated degree-days by simple summation
 for comparison\cite{Roltsch1999}.
 For each date, the number of days required for 3 generations of degree-day 
@@ -305,12 +305,12 @@ These calculations are implemented in \texttt{Temperature functions.ipynb} in th
 
 \subsection*{Agent-based Simulations: MED-FOES}
 
-MED-FOES\cite{manoukis_computer_2014,manoukis_agent-based_2014} is 
+MED-FOES\cite{manoukis_agent-based_2014,manoukis_computer_2014} is 
 an agent-based simulation explicitly modeling the eradication of a population of Medflies 
 under inundative sterile male releases (sterile insect technique or SIT) and other interventions
 such as increased trapping and foliar sprays.
-A MED-FOES simulation models a single non-spatial population starting from a given age distribution 
-and tracks the number of individuals through time until the last 
+A MED-FOES simulation models a single non-spatial population starting from a given population size and age distribution 
+tracking the number of individuals through time until the last 
 fly (Agent) dies and the population is eliminated.
 In addition to hourly temperatures, simulation parameters include: 
 the initial population, 
@@ -321,7 +321,7 @@ the literature including temperature-dependent development and mortality.
 The simulations were performed using the same hourly time series of temperature values 
 used for degree-day calculations.
 
-Due to the fact that many of the parameters are only know to within a range,
+Due to the fact that many of the parameters are only known to within a range,
 2500 individual MED-FOES simulations were run for each start date at each site 
 evenly sampling different regions of parameter-space via the 
 Latin Hypercube Sampling\cite{10.2307/1403510} procedure.
@@ -329,7 +329,8 @@ This set of simulations, encompassing a range of possible elimination outcomes, 
 %simulation -> run -> runset is the terminology I've been using
 The number of days from the start date required for
 95\% of the simulations in a run to be eliminated is 
-taken as a conservative prediction of needed quarantine length and referred to as ABS PQL.
+taken as a conservative prediction of needed quarantine length and referred to as 
+ABS PQL\cite{manoukis_agent-based_2014}.
 
 Varying the start date for different simulations was achieved by simply 
 starting at different points in the input temperature file; 
@@ -355,7 +356,7 @@ a total of approximately $86{\times}10^6$ simulations.
 
 The main results reported here are `normals' in a meteorological sense of the term,
 but without the typical running mean smoothing which would complicate
-interpretation of the results.
+interpretation.
 For a variable of interest (eg.\@ temperature or PQL), 
 all values for the same calendar day irrespective of year (eg.\@ 20-July) are
 aggregated and summary statistics such as mean, minimum, maximum, and standard deviation 
@@ -567,7 +568,7 @@ FAT and, to a lesser extent, RIV show this increase more dramatically, presumabl
 arid/inland climates where both daily and seasonal temperature ranges are larger
 (also see \autoref{fig:main_summary}).
 The standard deviation generally decreases with decreasing latitude, together with reduced means.
-The standard deviation in DD PQL for SFO shows a inversion of the seasonal trend 
+The standard deviation in DD PQL for SFO shows an inversion of the seasonal trend 
 other sites exhibit.
 This is due to the colder temperatures leading to extremely long DD PQLs, 
 frequently extending across two winter seasons.
@@ -714,7 +715,7 @@ calculated by degree day in those locations may be smaller than expected.
 % Other systematic comparisons of (PQLs? development?) include .. (PLUG Davis paper here) 
 % Are there other papers we should compare with here? I would guess yes...
 
-As expected, there is significant variation in PQL depending on the location of the outbreak, 
+There is significant variation in PQL depending on the location of the outbreak, 
 with the extremes in our study sites represented by Miami and San Francisco.
 These geographic results could be
 %compared directly to previous efforts to model climatic suitability of different parts of the US 
